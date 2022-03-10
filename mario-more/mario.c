@@ -17,11 +17,11 @@ void leftTower(int height)
     {
         for(int j=i; j>0; j-- )
         {
-            printf('.');
+            printf(" ");
         }
-        printf('#');
+        printf("#");
     }
 
 }
-
-leftTower(3)
+int height =3;
+leftTower(height);
