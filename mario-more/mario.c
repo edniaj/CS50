@@ -13,8 +13,8 @@ int main(void)
 
 void leftTower(int height)
 {
-    for (int i = 0; i < height; i++)
+    for (int i = height; i > 0; i--)
     {
-        
+        for(int j=)
     }
 }
