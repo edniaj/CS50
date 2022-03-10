@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-// int leftTower(int height);
+int leftTower(int height);
 int main(void)
 {
     int height;
@@ -24,3 +24,5 @@ int leftTower(int height)
     return 0;
 }
 
+int height = 5;
+int leftTower(height);
