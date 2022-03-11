@@ -25,7 +25,10 @@ int main(void)
     }
     if (total % 10 == 0)
     {
-        printf("%i\n", total);
+        if( lengthOfCard == 13) printf("VISA")
+        if( lengthOfCard == 15 && ) printf("American Express")
+        if( lengthOfCard == 16) printf("")
+        printf("")
     } else {
         printf("INVALID")
     }
