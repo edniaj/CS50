@@ -10,7 +10,7 @@ int main(void)
     unsigned long lengthOfCard = strlen(creditCard);
 
 
-    printf("%i",CharAt(creditCard[0]));
+    printf("%c", creditCard.ChartAt(0));
 
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
