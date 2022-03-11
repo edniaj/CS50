@@ -7,5 +7,9 @@ int main(void)
     unsigned long lengthOfCard = strlen(creditCard);
     if (( lengthOfCard != 13 && lengthOfCard !=15 ) && lengthOfCard != 16 ) printf("gg %lu",lengthOfCard);
 
-    for(int i=0; i<strlen;)
+
+    for(int i=0; i< lengthOfCard; i++)
+    {
+        
+    }
 }
