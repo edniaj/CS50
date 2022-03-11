@@ -7,8 +7,8 @@ int main(void)
     int total = 0;
     unsigned long lengthOfCard = strlen(creditCard);
 
-    
-    printf("%s", creditCard[0] == "5" ? "true" : "false");
+
+    printf("%i",(int) *creditCard[0] - '0');
 
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
