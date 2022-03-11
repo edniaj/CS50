@@ -3,5 +3,7 @@
 
 int main(void)
 {
-    char[20]
+    string creditCard   = get_string("Number: ");
+    printf("%s", creditCard);
+    for(int i=0; i)
 }
