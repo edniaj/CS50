@@ -25,25 +25,25 @@ int main(void)
     }
     if (total % 10 == 0)
     {
-        if (lengthOfCard == 13 && strcmp(&creditCard[0],"4"))
+        if ( ( lengthOfCard == 13 || lengthOfCard == 16)&& strcmp(&creditCard[0],"4"))
         {
             printf("VISA");
         }
 
-        if (lengthOfCard == 15 && ( strcmp(&creditCard[0:2] ,"34") || strcmp(&creditCard[0:2] ,"37") ) ) )
+        if (lengthOfCard == 15 &&  strcmp(&creditCard[0] ,"3") &&  ( strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[0] ,"7")  ))
             {
-                printf("American Express")
+                printf("American Express");
             }
         if (lengthOfCard == 16)
         {
-            if (creditCard [0:2] == "51" || creditCard[0:2] == "52" || creditCard[0:2] == "53" || creditCard [0:2] == "54")
+            if (    strcmp(&creditCard[0] == "5")   && (strcmp(&creditCard[1] ,"1") || strcmp(&creditCard[1] ,"2") || strcmp(&creditCard[1] ,"3") || strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[1] ,"5")) )
             {
-                printf("MasterCard")
+                printf("MasterCard");
             }
         }
     }
     else
     {
-        printf("INVALID")
+        printf("INVALID");
     }
 }
