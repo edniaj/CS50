@@ -38,6 +38,9 @@ int main(void)
         {
             if (    strcmp(&creditCard[0] ,"5")   &&  ( strcmp(&creditCard[1] ,"1") || strcmp(&creditCard[1] ,"2") || strcmp(&creditCard[1] ,"3") || strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[1] ,"5") ) )
             {
+                bool test = strcmp(&creditCard[0] ,"5"); // 4003600000000014
+                printf("%s", test? "true" : "false");
+
                 printf("MasterCard");
             }
         }
