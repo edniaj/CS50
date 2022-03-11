@@ -1,10 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-
-
 void leftTower(int height);
-
+void rightTower(int height);
 int main(void)
 {
     int height;
@@ -15,19 +13,23 @@ int main(void)
     leftTower(height);
 }
 
-
 void leftTower(int height)
 {
-    int height = get_int("enter : ");
     for (int i = height - 1; i >= 0; i--)
     {
         for (int j = i; j > 0; j--)
         {
             printf(" ");
         }
-        printf("#");
+        for (int k = height - i; k > 0; k--)
+        {
+            printf("#");
+        }
+        printf(" ");
+        for (int k = height - i; k > 0; k--)
+        {
+            printf("#");
+        }
+        printf("\n");
     }
-    return 0;
 }
-
-
