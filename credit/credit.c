@@ -9,7 +9,7 @@ int main(void)
     int total = 0;
     unsigned long lengthOfCard = strlen(creditCard);
 
-
+    char firstChar = 
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
         int temp = ((int)creditCard[i] - 48) * 2; //
