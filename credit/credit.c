@@ -36,7 +36,7 @@ int main(void)
             }
         if (lengthOfCard == 16)
         {
-            if (    strcmp(&creditCard[0] == "5")   && (strcmp(&creditCard[1] ,"1") || strcmp(&creditCard[1] ,"2") || strcmp(&creditCard[1] ,"3") || strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[1] ,"5")) )
+            if (    strcmp(&creditCard[0] ,"5")   && (strcmp(&creditCard[1] ,"1") || strcmp(&creditCard[1] ,"2") || strcmp(&creditCard[1] ,"3") || strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[1] ,"5")) )
             {
                 printf("MasterCard");
             }
