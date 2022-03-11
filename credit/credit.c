@@ -6,11 +6,13 @@ int main(void)
     string creditCard = get_string("Number: ");
     int total = 0;
     unsigned long lengthOfCard = strlen(creditCard);
-    // if (( lengthOfCard != 13 && lengthOfCard !=15 ) && lengthOfCard != 16 ) printf("gg %lu",lengthOfCard);
+
+    
+    printf("%s", creditCard[0] == "5" ? "true" : "false");
 
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
-        int temp = ((int)creditCard[i] - 48) * 2; //412341234123412
+        int temp = ((int)creditCard[i] - 48) * 2; //
         if (temp > 10)
         {
             total++; // Max total is 18
