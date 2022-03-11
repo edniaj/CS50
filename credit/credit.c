@@ -31,12 +31,12 @@ int main(void)
     {
         if (  firstChar == 4  && ( lengthOfCard == 13 || lengthOfCard == 16) )
         {
-            printf("VISA");
+            printf("VISA\n");
         }
 
         if (lengthOfCard == 15 && ( firstChar ==3  &&  ( secondChar == 4 || secondChar == 7 )  ) )
             {
-                printf("American Express");
+                printf("AMEX\n");
             }
         if (lengthOfCard == 16)
         {
@@ -46,8 +46,5 @@ int main(void)
             }
         }
     }
-    else
-    {
-        printf("INVALID");
-    }
+    printf("INVALID\n");
 }
