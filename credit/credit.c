@@ -10,8 +10,6 @@ int main(void)
     unsigned long lengthOfCard = strlen(creditCard);
 
 
-    printf("%c", *creditCard[0]);
-
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
         int temp = ((int)creditCard[i] - 48) * 2; //
