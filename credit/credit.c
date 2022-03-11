@@ -34,16 +34,18 @@ int main(void)
             printf("VISA\n");
         }
 
-        if (lengthOfCard == 15 && ( firstChar ==3  &&  ( secondChar == 4 || secondChar == 7 )  ) )
+        else if (lengthOfCard == 15 && ( firstChar ==3  &&  ( secondChar == 4 || secondChar == 7 )  ) )
             {
                 printf("AMEX\n");
             }
-        if (lengthOfCard == 16)
+        else if (lengthOfCard == 16)
         {
             if (    (firstChar == 5)   && (   secondChar == 1  || secondChar == 2  || secondChar == 3 || secondChar == 4 || secondChar == 5  ) )
             {   //4003600000000014
                 printf("MasterCard");
             }
+        } else {
+            printf("INVALID\n");
         }
     } else
     {
