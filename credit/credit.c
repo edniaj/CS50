@@ -9,9 +9,10 @@ int main(void)
     // if (( lengthOfCard != 13 && lengthOfCard !=15 ) && lengthOfCard != 16 ) printf("gg %lu",lengthOfCard);
 
 
-    for(int i=lengthOfCard-2; i>0; i++)
+    for(int i=lengthOfCard-2; i>0; i = i-2)
     {
         int temp = (int) creditCard[i] * 2;
+        printf("card is %i\n",(int) creditCard[i]);
         if (temp >10) {
             total++; // Max total is 18
             temp -=10;
