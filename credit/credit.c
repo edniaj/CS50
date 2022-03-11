@@ -4,21 +4,27 @@
 int main(void)
 {
     string creditCard = get_string("Number: ");
-    int total =0;
+    int total = 0;
     unsigned long lengthOfCard = strlen(creditCard);
     // if (( lengthOfCard != 13 && lengthOfCard !=15 ) && lengthOfCard != 16 ) printf("gg %lu",lengthOfCard);
 
-
-    for(int i=lengthOfCard-2; i>0; i = i-2)
+    for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
-        int temp =( (int) creditCard[i] -48) * 2;
-        printf("card is %i\n",temp);
-        
-        if (temp >10) {
+        int temp = ((int)creditCard[i] - 48) * 2;
+        if (temp > 10)
+        {
             total++; // Max total is 18
-            temp -=10;
+            temp -= 10;
         }
         total += temp;
     }
-    printf("%i", total);
+    for (int i = lengthOfCard - 1; i >= 0; i = i - 2)
+    {
+        int temp = ((int)creditCard[i] - 48);
+        total += temp;
+    }
+    if (total % 10 == 0)
+    {
+        printf("%i\n", total);
+    }
 }
