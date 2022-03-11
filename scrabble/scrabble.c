@@ -17,11 +17,13 @@ int main(void)
     // Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
-    if (score1 > score2)
+    if (score1 == score2)
+    {
+        printf("Tie!");
+    }
+    else if (score1 > score2)
     {
         printf("Player 1 wins!");
-    } else if (score1 == score2) {
-        printf("Tie!");
     }
     else
     {
@@ -36,7 +38,7 @@ int compute_score(string word)
     for (int i = 0; i < strlen(word); i++)
     {
         char cha = tolower(word[i]);
-        int index = ((int) cha - 'a' );
+        int index = ((int)cha - 'a');
         totalScore += POINTS[index];
     }
     return totalScore;
