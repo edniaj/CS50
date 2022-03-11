@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+
+
 int main(void)
 {
     string creditCard = get_string("Number: ");
@@ -8,7 +10,7 @@ int main(void)
     unsigned long lengthOfCard = strlen(creditCard);
 
 
-    printf("%i",);
+    printf("%i",CharAt(creditCard[0]));
 
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
