@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+
 int convertKey(string);
 
 int main(int argc, string argv[])
@@ -53,5 +55,5 @@ int convertKey(string keyInString)
     }
     int key = atoi(keyInString);
     key %= 26;
-    return key // Handle testcase where key is invalid later
+    return key ;// Handle testcase where key is invalid later
 }
