@@ -42,7 +42,7 @@ int main(void)
         {
             if (    (firstChar == 5)   && (   secondChar == 1  || secondChar == 2  || secondChar == 3 || secondChar == 4 || secondChar == 5  ) )
             {   //4003600000000014
-                printf("MasterCard\n");
+                printf("MASTERCARD\n\n");
             }else {
                 printf("INVALID\n");
             }
