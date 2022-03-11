@@ -26,5 +26,7 @@ int main(void)
     if (total % 10 == 0)
     {
         printf("%i\n", total);
+    } else {
+        printf("INVALID")
     }
 }
