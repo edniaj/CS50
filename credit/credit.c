@@ -19,7 +19,6 @@ int main(void)
         {
             total++; // Max total is 18
             temp -= 10;
-            printf("adding 10");
         }
         total += temp;
     }
