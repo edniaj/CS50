@@ -39,12 +39,7 @@ int compute_score(string word)
     {
         char cha = tolower(word[i]);
         int index = ((int)cha - 'a');
-        if (index > 'z' || index < 'a')
-        {
-            continue
-        }
-        else
-
+        if (index <= 'z' && index >= 'a')
         {
             totalScore += POINTS[index];
         }
