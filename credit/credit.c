@@ -25,18 +25,18 @@ int main(void)
     }
     if (total % 10 == 0)
     {
-        if (lengthOfCard == 13 && strcmp(creditCard[0],"4"))
+        if (lengthOfCard == 13 && strcmp(&creditCard[0],"4"))
         {
             printf("VISA");
         }
 
-        if (lengthOfCard == 15 && (creditCard [0:2] == "34" || creditCard [0:2] == "37")))
+        if (lengthOfCard == 15 && ( strcmp(&creditCard[0:2] ,"34") || strcmp(&creditCard[0:2] ,"37") ) ) )
             {
                 printf("American Express")
             }
         if (lengthOfCard == 16)
         {
-            if (creditCard [0:2] == "51" || creditCard [0:2] == "52" || creditCard [0:2] == "53" || creditCard [0:2] == "54")
+            if (creditCard [0:2] == "51" || creditCard[0:2] == "52" || creditCard[0:2] == "53" || creditCard [0:2] == "54")
             {
                 printf("MasterCard")
             }
