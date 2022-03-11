@@ -34,7 +34,7 @@ int compute_score(string word)
     for (int i = 0; i < strlen(word); i++)
     {
         char cha = tolower(word[i]);
-        int index = ((int) cha - 'a' + 1);
+        int index = ((int) cha - 'a' );
         totalScore += POINTS[index];
     }
     return totalScore;
