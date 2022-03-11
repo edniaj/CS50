@@ -29,20 +29,19 @@ int main(void)
     }
     if (total % 10 == 0)
     {
-        if ( ( lengthOfCard == 13 || lengthOfCard == 16)&& strcmp(firstChar,"4"))
+        if (  firstChar == 4  && ( lengthOfCard == 13 || lengthOfCard == 16) )
         {
             printf("VISA");
         }
 
-        if (lengthOfCard == 15 &&  strcmp(firstChar ,"3") &&  ( firstChar ,"4") || secondChar ,"7")  ))
+        if (lengthOfCard == 15 && ( firstChar ==3  &&  ( secondChar == 4 || secondChar == 7 )  ) )
             {
                 printf("American Express");
             }
         if (lengthOfCard == 16)
         {
-            if (    strcmp(firstChar,"5")   &&  ( strcmp(secondChar ,"1") || strcmp(secondChar ,"2") || strcmp(secondChar ,"3") || strcmp(secondChar ,"4") || strcmp(secondChar ,"5") ) )
-            {
-                printf("\nchar is : %c\n", firstChar ); //4003600000000014
+            if (    (firstChar == 5)   && (   secondChar == 1  || secondChar == 2  || secondChar == 3 || secondChar == 4 || secondChar == 5  ) )
+            {   //4003600000000014
                 printf("MasterCard");
             }
         }
