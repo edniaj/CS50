@@ -11,7 +11,15 @@ int main(int argc, string argv[])
     const int key = convertKey(argv[2]);
 
     string plainText = argv[1];
+    int lengthText = strlen(plainText);
 
+    for (int i = 0; i < lengthText; i++)
+    {
+        if (isalpha(plainText[i]))
+        {
+            
+        }
+    }
     // argv[1] is word to censor.
 
     // Tranlate every word into the next word. Check for overflows. use islower() for different casing
