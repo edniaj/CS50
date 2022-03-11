@@ -4,7 +4,8 @@
 int main(void)
 {
     string creditCard = get_string("Number: ");
-    int lengthOfCard = 0;
-
-    for(int i=0; i<)
+    unsigned long lengthOfCard = strlen(creditCard);
+    if (lengthOfCard !=15 )
+    printf("%lu", lengthOfCard);
+    // for(int i=0; i<;em)
 }
