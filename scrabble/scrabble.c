@@ -33,7 +33,9 @@ int compute_score(string word)
     int totalScore = 0;
     for (int i = 0; i < strlen(word); i++)
     {
-        totalScore += POINTS[((int)tolower(word[i]) - 'a' + 1)];
+        char cha = tolower(word[i]);
+        int index = ((int) cha - 'a' + 1);
+        totalScore += POINTS[index];
     }
     return totalScore;
 }
