@@ -25,7 +25,7 @@ void leftTower(int height)
         {
             printf("#");
         }
-        printf(" ");
+        printf("  ");
         for (int k = height - i; k > 0; k--)
         {
             printf("#");
