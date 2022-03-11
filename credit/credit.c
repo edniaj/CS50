@@ -25,7 +25,7 @@ int main(void)
     }
     if (total % 10 == 0)
     {
-        if (lengthOfCard == 13 && creditCard[0] == "4")
+        if (lengthOfCard == 13 && strcmp(creditCard[0],"4"))
         {
             printf("VISA");
         }
