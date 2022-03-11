@@ -8,6 +8,7 @@ int convertKey(string);
 
 int main(int argc, string argv[])
 {
+    
     // Convert key into index. Check for non-integer arvv[2]
     const int keyInString = get_int("");
     const int key = convertKey(argv[2]);
