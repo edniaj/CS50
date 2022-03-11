@@ -11,7 +11,7 @@ int main(void)
 
     for(int i=lengthOfCard-2; i>0; i = i-2)
     {
-        int temp =( (int) creditCard[i] -48) * 2;
+        int temp = (int)creditCard[i] - '0';
         printf("card is %i\n",temp);
         if (temp >10) {
             total++; // Max total is 18
