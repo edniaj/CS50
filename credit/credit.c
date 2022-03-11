@@ -45,6 +45,9 @@ int main(void)
                 printf("MasterCard");
             }
         }
-    }
+            printf("INVALID\n");
+    } else
+    {
     printf("INVALID\n");
+    }
 }
