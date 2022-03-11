@@ -4,10 +4,7 @@
 int main(void)
 {
     string creditCard = get_string("Number: ");
-    printf("%s", creditCard);
-    int length = strlen(creditCard);
-    for (int i = 0; i < length; i++)
-    {
-        printf("%s", typeid(cardCard[i]));
-    }
+    int lengthOfCard = 0;
+
+    for(int i=0; i<)
 }
