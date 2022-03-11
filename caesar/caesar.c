@@ -15,9 +15,13 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < lengthText; i++)
     {
-        if (isalpha(plainText[i]))
+        int index;
+        if (isupper(plainText[i]))
         {
-            
+            index= (int) plainText[i] - 'A' +1;
+            index += key;
+            index %=26;
+            plainText[i] = 
         }
     }
     // argv[1] is word to censor.
