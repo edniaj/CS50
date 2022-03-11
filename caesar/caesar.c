@@ -33,12 +33,12 @@ int convertKey(string keyInString)
         // Check for each character
         if (isdigit(keyInString[i]) != 0)
         {
-            continue
+            continue;
         }
         else
         {
             return 0;
         }
     }
-    return atoi(keyInString) // Handle testcase where key is invalid later
+    return atoi(keyInString)%26 // Handle testcase where key is invalid later
 }
