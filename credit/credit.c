@@ -9,7 +9,8 @@ int main(void)
     int total = 0;
     unsigned long lengthOfCard = strlen(creditCard);
 
-    char firstChar = 
+    char firstChar = creditCard[0];
+    char secondChar = creditCard[1];
     for (int i = lengthOfCard - 2; i >= 0; i = i - 2)
     {
         int temp = ((int)creditCard[i] - 48) * 2; //
@@ -27,20 +28,20 @@ int main(void)
     }
     if (total % 10 == 0)
     {
-        if ( ( lengthOfCard == 13 || lengthOfCard == 16)&& strcmp(creditCard[0],"4"))
+        if ( ( lengthOfCard == 13 || lengthOfCard == 16)&& strcmp(firstChar,"4"))
         {
             printf("VISA");
         }
 
-        if (lengthOfCard == 15 &&  strcmp(&creditCard[0] ,"3") &&  ( strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[0] ,"7")  ))
+        if (lengthOfCard == 15 &&  strcmp(firstChar ,"3") &&  ( firstChar ,"4") || secondChar ,"7")  ))
             {
                 printf("American Express");
             }
         if (lengthOfCard == 16)
         {
-            if (    strcmp(&creditCard[0] ,"5")   &&  ( strcmp(&creditCard[1] ,"1") || strcmp(&creditCard[1] ,"2") || strcmp(&creditCard[1] ,"3") || strcmp(&creditCard[1] ,"4") || strcmp(&creditCard[1] ,"5") ) )
+            if (    strcmp(firstChar,"5")   &&  ( strcmp(secondChar ,"1") || strcmp(secondChar ,"2") || strcmp(secondChar ,"3") || strcmp(secondChar ,"4") || strcmp(secondChar ,"5") ) )
             {
-                printf("\nchar is : %c\n", creditCard[0] ); //4003600000000014
+                printf("\nchar is : %c\n", firstChar ); //4003600000000014
                 printf("MasterCard");
             }
         }
