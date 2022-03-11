@@ -3,5 +3,5 @@
 
 int main(void)
 {
-    ulong 
+    char[20]
 }
