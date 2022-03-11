@@ -5,7 +5,7 @@ int main(void)
 {
     string creditCard = get_string("Number: ");
     unsigned long lengthOfCard = strlen(creditCard);
-    if (lengthOfCard !=15 )
+    if (( lengthOfCard != 13 || lengthOfCard !=15 )|| lengthOfCard != 16 ) printf("%lu",lengthOfCard);
     printf("%lu", lengthOfCard);
     // for(int i=0; i<;em)
 }
