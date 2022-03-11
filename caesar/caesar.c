@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
-
-int convertKey(string)
+#include <string.h>
+int convertKey(string);
 
 int main(int argc, string argv[])
 {
@@ -18,15 +18,22 @@ int main(int argc, string argv[])
         int index;
         if (isupper(plainText[i]))
         {
-            index= (int) plainText[i] - 'A' +1;
+            index = (int)plainText[i] - 'A' + 1;
             index += key;
-            index %=26;
-            plainText[i] = 
+            index %= 26;
+            index += 'A';
+            plainText[i] = (char)index;
+        }
+        if (islower(plainText[i]))
+        {
+            index = (int)plainText[i] - 'a' + 1;
+            index += key;
+            index %= 26;
+            index += 'a';
+            plainText[i] = (char)index;
         }
     }
-    // argv[1] is word to censor.
-
-    // Tranlate every word into the next word. Check for overflows. use islower() for different casing
+    printf("%s", plainText);
 }
 
 int convertKey(string keyInString)
@@ -44,5 +51,7 @@ int convertKey(string keyInString)
             return 0;
         }
     }
-    return atoi(keyInString)%26 // Handle testcase where key is invalid later
+    int key = atoi(keyInString);
+    key %= 26;
+    return key // Handle testcase where key is invalid later
 }
