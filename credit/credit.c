@@ -3,7 +3,10 @@
 
 int main(void)
 {
-    string creditCard   = get_string("Number: ");
+    string creditCard = get_string("Number: ");
     printf("%s", creditCard);
-    for(int i=0; i)
+    for (int i = 0; i < strlen(creditCard); i++)
+    {
+        typeid()
+    }
 }
