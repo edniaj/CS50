@@ -13,7 +13,6 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key");
         return 1;
     }
-    string plainText = get_string("plaintext: "); // VCHPRZGJNTLSKFBDQWAXEUYMOI
     const int stringLength = strlen(argv[1]);
     if (stringLength != 26)
     {
@@ -23,9 +22,12 @@ int main(int argc, string argv[])
 
     if (checkKey(argv[1]) == 1)
     {
-        printf("Invalid");
+        printf("Invalid key");
         return 1;
     }
+
+    string plainText = get_string("plaintext: "); // VCHPRZGJNTLSKFBDQWAXEUYMOI
+
     for (int i = 0; i < strlen(plainText); i++)
     {
         if (isupper(plainText[i]))
