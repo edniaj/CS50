@@ -10,8 +10,9 @@ int main(int argc, string argv[])
 {
 
     // Convert key into index. Check for non-integer arvv[2]
-    if (argc > 3) {
+    if (argc <= 3) {
         printf("Usage: ./caesar key");
+        return 1;
     }
     const int keyInString = get_int("");
     const int key = convertKey(argv[2]);
