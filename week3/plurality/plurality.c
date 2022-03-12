@@ -81,42 +81,28 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    candidate newList[candidate_count];
     for (int i = 0; i < candidate_count; i++)
     {
         // Selection sort
         int amountSwap = 0;
         for (int j = 0; j < candidate_count - i; j++)
         {
-            if (lowestVotes > candidates[j].votes)
+            if (candidates[j + 1].votes < candidates[j].votes)
             {
-                candidate temp = candidates[lowestCandidate];
-                candidates[lowestCandidate] = candidates[j];
+                candidate temp = candidates[j + 1];
+                candidates[j + 1] = candidates[j];
                 candidates[j] = temp;
             }
         }
-        newList[j] = lowestCandidate;
-    }
-    int highestValue;
-    if (candidate_count > 1)
-    {
-        highestValue = newList[candidate_count - 1].votes;
-    }
-    else
-    {
-        printf("%s\n", newList[0].name);
-        return;
     }
 
+    int highestValue = candidates[candidate_count - 1].votes;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (newList[i].votes == highestValue)
+        if (candidates[i].votes == highestValue)
         {
-            printf("%s\n", newList[i].name);
+            printf("%s\n", candidates[i].name);
         }
-        // Print out the name of the candidate who received the most votes in the election, and then print a newline.
-
-        // if tie -> print out each candidate in separate line
     }
     return;
 }
