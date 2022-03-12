@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     const int keyInString = get_int("");
     const int key = convertKey(argv[2]);
 
-    string plainText = argv[1];
+    string plainText = get_string("plaintext: ");
     int lengthText = strlen(plainText);
 
     for (int i = 0; i < lengthText; i++)
@@ -40,7 +40,7 @@ int main(int argc, string argv[])
             plainText[i] = (char)index;
         }
     }
-    printf("%s", plainText);
+    printf("ciphertext: %s", plainText);
 }
 
 int convertKey(string keyInString)
