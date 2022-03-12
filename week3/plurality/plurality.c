@@ -108,7 +108,6 @@ void print_winner(void)
         // Print out the name of the candidate who received the most votes in the election, and then print a newline.
 
         // if tie -> print out each candidate in separate line
-
-        return;
     }
+    return;
 }
