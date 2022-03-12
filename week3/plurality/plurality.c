@@ -90,7 +90,9 @@ void print_winner(void)
         {
             if (lowestCandidate.votes > candidates[j].votes)
             {
+                candidate temp = lowestCandidate;
                 lowestCandidate = candidates[j];
+                candidates[j] = temp;
             }
         }
         newList[i] = lowestCandidate;
