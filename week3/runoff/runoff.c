@@ -169,10 +169,12 @@ void tabulate(void)
 bool print_winner(void)
 {
     int winnerIndex =0;
+    int minimumVote = (voter_count + 1) /2;
     for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i] > candidates[winnerIndex]){
-            winnerIndex = i;
+        if(candidates[i] > minimumVote){
+            printf("%s", candidates[i].name);
+            return true;
         }
     }
     return false;
