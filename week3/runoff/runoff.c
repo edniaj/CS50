@@ -153,7 +153,14 @@ void tabulate(void)
         {
             if (strcmp(preferences[i][j], candidates[j].name) == 0) // If this is who you voted for, check elimination
             {
-                if ()
+                if (candidates[j].eliminated) // Eliminated so we break 
+                {
+                    break;
+                }
+                else
+                {
+
+                }
             }
         }
     }
