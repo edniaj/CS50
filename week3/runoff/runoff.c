@@ -178,7 +178,7 @@ bool print_winner(void)
     int winnerIndex = 0;
     int halfVote = -1;
     int minimumVote = -1;
-    if (minimumVote%2 ==0){
+    if (voter_count%2 ==0){
         minimumVote = (voter_count) / 2;
         halfVote = (voter_count) / 2;
     }
