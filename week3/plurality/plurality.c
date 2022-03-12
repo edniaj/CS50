@@ -83,22 +83,33 @@ void print_winner(void)
 {
     candidate newList[candidate_count];
 
-    for(int i=0; i< candidate_count; i++ ){
+    for (int i = 0; i < candidate_count; i++)
+    {
         newList[i] = candidates[i];
     }
 
-    int highestValue;
-    if (candidate_count > 1)
+    // Bubble sort
+
+    for (int i = 0; i < candidate_count; i++)
     {
-        highestValue = newList[candidate_count - 1].votes;
-    }
-    else
-    {
-        printf("%s\n", newList[0].name);
-        return;
+        int numberSwap = 0;
+        for (int j = 0; j < candidate_count - i; j++)
+        {
+            if (newList[j].votes > newList[j + 1].votes)
+            {
+                candidate temp = newList[j + 1];
+                newList[j + 1] = newList[j];
+                newList[j] = newList[j + 1];
+                numberSwap++;
+            }
+        }
+        if (numberSwap == 0)
+        {
+            break;
+        }
     }
 
-
+    int highestValue = newList[candidate_count - 1].votes;
     for (int i = 0; i < candidate_count; i++)
     {
         if (newList[i].votes == highestValue)
