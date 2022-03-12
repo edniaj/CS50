@@ -137,6 +137,7 @@ bool vote(int voter, int rank, string name)
     for (int i = 0; i < candidate_count; i++)
     {
         candidate test = candidates[i];
+        int test2[MAX_VOTERS][MAX_CANDIDATES] = preferences;
         if (strcmp(candidates[i].name, name) == 0)
         {
             preferences[voter][rank] = i;
