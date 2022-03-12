@@ -157,7 +157,7 @@ void tabulate(void)
         {
             if (candidates[preferences[i][j]].eliminated)
             {
-                printf(")
+                printf("%s was eliminated. We will continue with the for loop\n", candidates[preferences[i][j]].name);
                 continue;
             }
             else
@@ -203,7 +203,7 @@ int find_min(void)
             minimumVote = candidates[i].votes;
         }
     }
-    printf("\nminimumVote: %i\n",minimumVote)
+    printf("\nminimumVote: %i\n",minimumVote);
     return minimumVote;
 }
 
