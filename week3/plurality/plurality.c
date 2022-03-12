@@ -85,8 +85,8 @@ void print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         // Selection sort
-        candidate lowestCandidate = candidates[i];
-        for (int j = i; j < candidate_count - i; j++)
+        candidate lowestCandidate = candidates[0];
+        for (int j = 0; j < candidate_count - i; j++)
         {
             if (lowestCandidate.votes > candidates[j].votes)
             {
