@@ -150,12 +150,14 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
+    printf("\nTabulating Scores\n");
     for (int i = 0; i < voter_count; i++) // N^3
     {
         for (int j = 0; j < candidate_count; j++) // J -> Rank
         {
             if (candidates[preferences[i][j]].eliminated)
             {
+                printf(")
                 continue;
             }
             else
@@ -175,6 +177,7 @@ bool print_winner(void)
 {
     int winnerIndex = 0;
     int minimumVote = (voter_count + 1) / 2;
+    printf("\nPrinting winners\n");
     for (int i = 0; i < candidate_count; i++)
     {
         printf("%i : %s\n",candidates[i].votes, candidates[i].name );
@@ -200,6 +203,7 @@ int find_min(void)
             minimumVote = candidates[i].votes;
         }
     }
+    printf("\nminimumVote: %i\n",minimumVote)
     return minimumVote;
 }
 
@@ -224,6 +228,7 @@ void eliminate(int min)
         if (candidates[i].votes < min)
         {
             candidates[i].eliminated = true;
+            printf("%s is eliminated",candidates[i].name);
         }
     }
     return;
