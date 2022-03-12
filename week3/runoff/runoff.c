@@ -48,7 +48,6 @@ int main(int argc, string argv[])
     }
     // End of validation
 
-
     // Populate array of candidates
     for (int i = 0; i < candidate_count; i++)
     {
@@ -79,7 +78,7 @@ int main(int argc, string argv[])
             // Record vote, unless it's invalid
             if (!vote(i, j, name)) // Name == Valid candidate ->  You should update the global preferences array to
             {
-                printf("Invalid vote.\n");  // Manage Invalid votes
+                printf("Invalid vote.\n"); // Manage Invalid votes
                 return 4;
             }
         }
@@ -94,7 +93,6 @@ int main(int argc, string argv[])
         // Calculate votes given remaining candidates
         tabulate();
 
-
         // Check if election has been won
         bool won = print_winner();
         if (won)
@@ -102,7 +100,6 @@ int main(int argc, string argv[])
             break;
         }
         // End of checking winner -> Break loop if theres a winner
-
 
         // Eliminate last-place candidates
         int min = find_min(); // Find that loser
@@ -136,10 +133,11 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    for (int i =0; i<candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i] == name)
         {
+            preferences[voter][rank] = name;
             return true;
         }
     }
