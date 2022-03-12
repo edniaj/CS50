@@ -143,7 +143,7 @@ bool vote(int voter, int rank, string name)
             return true;
         }
     }
-    
+
     return false;
 }
 
@@ -161,6 +161,7 @@ void tabulate(void)
             else
             {
                 candidates[preferences[i][j]].votes++;
+                break;
             }
         }
     }
