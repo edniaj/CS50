@@ -67,7 +67,7 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
-    // Binary search
+    for( int i=0; i<)
     // If name == one of the names of the candidates in the election
 
     // then update that candidate’s vote total to account for the new vote.
