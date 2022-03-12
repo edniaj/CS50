@@ -150,7 +150,7 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    printf("\nTabulating Scores\n");
+    // printf("\nTabulating Scores\n");
     for (int i = 0; i < voter_count; i++) // N^3
     {
         for (int j = 0; j < candidate_count; j++) // J -> Rank
