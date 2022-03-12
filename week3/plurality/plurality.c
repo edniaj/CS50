@@ -104,7 +104,8 @@ void print_winner(void)
     }
     else
     {
-        highestValue = newList[0].votes;
+        printf("%s\n", newList[0].name);
+        return;
     }
 
     for (int i = 0; i < candidate_count; i++)
