@@ -6,7 +6,7 @@
 int checkKey(string ciperKey);
 int main(int argc, string argv[])
 {
-    string plainText = get_string("plaintext: "); //VCHPRZGJNTLSKFBDQWAXEUYMOI
+    string plainText = get_string("plaintext: "); // VCHPRZGJNTLSKFBDQWAXEUYMOI
     const int stringLength = strlen(argv[1]);
     // ensure argc is 26
     if (argc != 2)
@@ -40,8 +40,19 @@ int main(int argc, string argv[])
     // convert plaintext to cipher text
 }
 
-int checkKey(string cipherKey){
-    const clone = tolower(plainText)
-    
+int checkKey(string cipherKey)
+{
+    const clone = tolower(plainText);
+    for (int i = 0; i < strlen(clone); i++)
+    {
+        for (int j = i + 1; j < strlen(clone); j++)
+        {
+            if (!isalpha(clone[j]))
+            {
+                return 1;
+            }
+            if (strcmp(clone[j],clone[i]) )
+        }
+    }
     // Do a N^2 check to see for repetition // Check isalpha
 }
