@@ -24,7 +24,7 @@ int main(int argc, string argv[])
         int index;
         if (isupper(plainText[i]))
         {
-            index = (int)plainText[i] - 'A' + 1;
+            index = (int)plainText[i] - 'A';
             index += key;
             index %= 26;
             index += 'A';
@@ -32,7 +32,7 @@ int main(int argc, string argv[])
         }
         if (islower(plainText[i]))
         {
-            index = (int)plainText[i] - 'a' + 1;
+            index = (int)plainText[i] - 'a';
             index += key;
             index %= 26;
             index += 'a';
