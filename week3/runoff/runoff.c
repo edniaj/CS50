@@ -177,10 +177,10 @@ bool print_winner(void)
 {
     int winnerIndex = 0;
     int minimumVote = (voter_count + 1) / 2;
-    // printf("\nPrinting winners\n");
+    printf("\nPrinting winners\nMinimum Vote: %i\n", minimumVote);
     for (int i = 0; i < candidate_count; i++)
     {
-        // printf("%i : %s\n",candidates[i].votes, candidates[i].name );
+        printf("%i : %s\n",candidates[i].votes, candidates[i].name );
         if (candidates[i].votes > minimumVote)
         {
             printf("%s", candidates[i].name);
