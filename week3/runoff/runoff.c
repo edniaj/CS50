@@ -151,13 +151,9 @@ void tabulate(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (candidates[j].eliminated)
+            if (strcmp(preferences[i][j], candidates[j].name) == 0) // If this is who you voted for, check elimination
             {
-                continue
-            }
-            else
-            {
-
+                if ()
             }
         }
     }
