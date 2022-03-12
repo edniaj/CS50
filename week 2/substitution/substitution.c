@@ -18,7 +18,7 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.");
         return 1;
     }
-    for (int i = 0; i < stringLength; i++)
+    for (int i = 0; i < strlen(plainText); i++)
     {
         if (isupper(plainText[i]))
         {
