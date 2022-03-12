@@ -31,7 +31,7 @@ int main(int argc, string argv[])
             plainText[i] = tolower(argv[1][indexChar]);
         }
     }
-    printf("%s", plainText);
+    printf("ciphertext: %s\n", plainText);
 
     // Use an if statement to convert back to upper / lowercase
 
