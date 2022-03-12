@@ -20,6 +20,12 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.");
         return 1;
     }
+
+    if (checkKey(argv[1]) == 1)
+    {
+        printf("Invalid");
+        return 1;
+    }
     for (int i = 0; i < strlen(plainText); i++)
     {
         if (isupper(plainText[i]))
@@ -42,16 +48,21 @@ int main(int argc, string argv[])
 
 int checkKey(string cipherKey)
 {
-    const clone = tolower(plainText);
+    const string clone = tolower(cipherKey);
     for (int i = 0; i < strlen(clone); i++)
     {
         for (int j = i + 1; j < strlen(clone); j++)
         {
             if (!isalpha(clone[j]))
             {
+                printf("Invalid");
                 return 1;
             }
-            if (strcmp(clone[j],clone[i]) )
+            if (strcmp(clone[j], clone[i]) != 0)
+            {
+                printf("Invalid");
+                return 1;
+            }
         }
     }
     // Do a N^2 check to see for repetition // Check isalpha
