@@ -48,14 +48,11 @@ int convertKey(string keyInString)
     for (int i = 0; i < lengthKey; i++)
     {
         // Check for each character
-        if (isdigit(keyInString[i]) != 0)
+        if (isdigit(keyInString[i]) == 0)
         {
-            continue;
+            return 1;
         }
-        else
-        {
-            return 0;
-        }
+
     }
     int key = atoi(keyInString);
     key %= 26;
