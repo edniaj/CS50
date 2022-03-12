@@ -58,12 +58,10 @@ int checkKey(string cipherKey)
             char b = tolower(cipherKey[j]);
             if (!isalpha(cipherKey[j]))
             {
-                printf("Invalid");
                 return 1;
             }
             if (strcmp(&a, &b) == 0)
             {
-                printf("Invalid");
                 return 1;
             }
         }
