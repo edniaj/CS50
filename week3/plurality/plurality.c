@@ -88,11 +88,11 @@ void print_winner(void)
         {
             // Swap using a temp
             // Compare to check if votes is higher / lower
-            if (candidates[j].votes > candidates[j + 1].votes)
+            if (candidates[j].votes > candidates[j + 1].votes) //  j > j + 1
             {
-                candidate temp = candidates[j + 1]; // Temporary hold lower value
-                candidates[j + 1] = candidates[j];  // Move higher value to the right
-                candidates[j] = temp;               // Move lower value to the left
+                candidate temp = candidates[j + 1]; //  temp = j+ 1
+                candidates[j + 1] = candidates[j];  // j+1 = j
+                candidates[j] = temp;               // j = j+1 ; j < j+1
             }
         }
     }
