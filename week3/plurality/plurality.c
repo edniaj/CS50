@@ -96,7 +96,7 @@ void print_winner(void)
             }
         }
     }
-    int highestValue = candidates[candidate_count - 1].votes;
+    int highestValue = candidates[candidate_count - 1].name;
     for (int i = 0; i< candidate_count; i++)
     {
         printf("%s %i\n", candidates[i].name, candidates[i].votes);
