@@ -97,7 +97,15 @@ void print_winner(void)
         }
         newList[i] = lowestCandidate;
     }
-    int highestValue = newList[candidate_count - 1].votes;
+    int highestValue;
+    if (candidate_count > 1)
+    {
+        highestValue = newList[candidate_count - 1].votes;
+    }
+    else
+    {
+        highestValue = newList[0].votes;
+    }
 
     for (int i = 0; i < candidate_count; i++)
     {
