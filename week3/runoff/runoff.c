@@ -176,12 +176,22 @@ void tabulate(void)
 bool print_winner(void)
 {
     int winnerIndex = 0;
-    int minimumVote = (voter_count + 1) / 2;
+    int halfVote = -1;
+    int minimumVote = -1;
+    if (minimumVote%2 ==0){
+        minimumVote = (voter_count) / 2;
+        halfVote = (voter_count) / 2;
+    }
+    else
+    {
+        minimumVote = (voter_count + 1) / 2;
+    }
+
     // printf("\nPrinting winners\nMinimum Vote: %i\n", minimumVote);
     for (int i = 0; i < candidate_count; i++)
     {
         // printf("%i : %s\n",candidates[i].votes, candidates[i].name );
-        if (candidates[i].votes >= minimumVote)
+        if (candidates[i].votes >= minimumVote && candidates[i].votes != halfVote)
         {
             printf("%s", candidates[i].name);
             return true;
