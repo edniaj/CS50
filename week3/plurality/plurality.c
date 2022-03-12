@@ -65,29 +65,26 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
+
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i]['name'] == name)
+        if (strcmp(candidates[i].name, name) == 0)
         {
             candidates[i]['vote'] += 1;
             return true;
         }
     }
-    // If name == one of the names of the candidates in the election
 
-    // then update that candidate’s vote total to account for the new vote.
-    // The vote function in this case should return true to indicate a successful ballot.
     return false;
 }
 
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
-    // TODO
-    for (int i = 0; i < candidate_count; i++)
+    candidate winner[] = candidates[0];
+    for (int i = 1; i < candidate_count; i++)
     {
-        candidates
+        if(winnner.vote > )
     }
     // Print out the name of the candidate who received the most votes in the election, and then print a newline.
 
