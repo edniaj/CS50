@@ -6,15 +6,15 @@
 int checkKey(string ciperKey);
 int main(int argc, string argv[])
 {
-    string plainText = get_string("plaintext: "); // VCHPRZGJNTLSKFBDQWAXEUYMOI
-    const int stringLength = strlen(argv[1]);
+
     // ensure argc is 26
     if (argc != 2)
     {
         printf("Usage: ./substitution key");
         return 1;
     }
-
+    string plainText = get_string("plaintext: "); // VCHPRZGJNTLSKFBDQWAXEUYMOI
+    const int stringLength = strlen(argv[1]);
     if (stringLength != 26)
     {
         printf("Key must contain 26 characters.");
