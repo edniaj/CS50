@@ -4,15 +4,20 @@
 #include <ctype.h>
 int main(int argc, string argv[])
 {
+    string plainText = get_string("plaintext: "); //VCHPRZGJNTLSKFBDQWAXEUYMOI
+    const int stringLength = strlen(argv[1]);
     // ensure argc is 26
-    if (argc != 26)
+    if (argc != 2)
+    {
+        printf("Usage: ./substitution key");
+        return 1;
+    }
+
+    if (stringLength != 26)
     {
         printf("Key must contain 26 characters.");
         return 1;
     }
-    string plainText = get_string("plaintext: ");
-    const int stringLength = strlen(argv[1]);
-
     for (int i = 0; i < stringLength; i++)
     {
         if (isupper(plainText[i]))
