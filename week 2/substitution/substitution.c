@@ -54,14 +54,13 @@ int checkKey(string cipherKey)
     {
         for (int j = i + 1; j < strlen(cipherKey); j++)
         {
-            char a = tolower(cipherKey[i]);
-            char b = tolower(cipherKey[j]);
+            int a = (int) tolower(cipherKey[i]);
+            int b = (int) tolower(cipherKey[j]);
             if (!isalpha(cipherKey[j]))
             {
                 return 1;
             }
-            int value = strcmp(&a, &b);
-            if (value == 0)
+            if (a == b)
             {
                 return 1;
             }
