@@ -135,7 +135,7 @@ bool vote(int voter, int rank, string name)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(candidates[i].name,name))
+        if (strcmp(candidates[i].name, name))
         {
             preferences[voter][rank] = i;
             return true;
@@ -168,11 +168,12 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    int winnerIndex =0;
-    int minimumVote = (voter_count + 1) /2;
+    int winnerIndex = 0;
+    int minimumVote = (voter_count + 1) / 2;
     for (int i = 0; i < candidate_count; i++)
     {
-        if(candidates[i] > minimumVote){
+        if (candidates[i] > minimumVote)
+        {
             printf("%s", candidates[i].name);
             return true;
         }
@@ -183,7 +184,15 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    // TODO
+    int loserIndex = 0;
+    int minimumVote = candidates[0].votes;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i] < minimumVote)
+        {
+            loserIndex =i;
+        }
+    }
     return 0;
 }
 
