@@ -89,10 +89,14 @@ void print_winner(void)
     }
 
     // Bubble sort
-
+    int numberSwap = -1;
     for (int i = 0; i < candidate_count; i++)
     {
-        int numberSwap = 0;
+        if (numberSwap == 0)
+        {
+            break;
+        }
+
         for (int j = 0; j < candidate_count - i; j++)
         {
             if (newList[j].votes > newList[j + 1].votes)
@@ -102,10 +106,6 @@ void print_winner(void)
                 newList[j] = temp;
                 numberSwap++;
             }
-        }
-        if (numberSwap == 0)
-        {
-            break;
         }
     }
 
