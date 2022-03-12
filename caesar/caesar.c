@@ -10,15 +10,15 @@ int main(int argc, string argv[])
 {
 
     // Convert key into index. Check for non-integer arvv[2]
-    if (argc > 2)
+    if (argc !=2)
     {
-        prinf("Usage: ./caesar key");
+        printf("Usage: ./caesar key");
         return 1;
     }
     const int key = convertKey(argv[1]);
     if (key == 0)
     {
-        prinf("Usage: ./caesar key");
+        printf("Usage: ./caesar key");
         return 1;
     }
     string plainText = get_string("plaintext: ");
