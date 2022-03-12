@@ -48,17 +48,16 @@ int main(int argc, string argv[])
 
 int checkKey(string cipherKey)
 {
-    const string clone = tolower(cipherKey);
-    for (int i = 0; i < strlen(clone); i++)
+    for (int i = 0; i < strlen(cipherKey); i++)
     {
-        for (int j = i + 1; j < strlen(clone); j++)
+        for (int j = i + 1; j < strlen(cipherKey); j++)
         {
-            if (!isalpha(clone[j]))
+            if (!isalpha(cipherKey[j]))
             {
                 printf("Invalid");
                 return 1;
             }
-            if (strcmp(clone[j], clone[i]) != 0)
+            if (strcmp(tolower(cipherKey[j]), tolower(cipherKey[i])) != 0)
             {
                 printf("Invalid");
                 return 1;
