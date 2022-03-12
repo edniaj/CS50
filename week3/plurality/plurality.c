@@ -97,7 +97,7 @@ void print_winner(void)
             break;
         }
 
-        for (int j = 0; j < candidate_count - i; j++)
+        for (int j = 0; j < candidate_count - 1 - i; j++)
         {
             if (newList[j].votes > newList[j + 1].votes)
             {
