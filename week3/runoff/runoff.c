@@ -193,7 +193,7 @@ bool print_winner(void)
         // printf("%i : %s\n",candidates[i].votes, candidates[i].name );
         if (candidates[i].votes >= minimumVote && candidates[i].votes != halfVote)
         {
-            printf("%s", candidates[i].name);
+            printf("%s\n", candidates[i].name);
             return true;
         }
     }
