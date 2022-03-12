@@ -6,6 +6,6 @@ sort2 uses: TODO
 
 How do you know?: TODO
 
-sort3 uses: TODO
+sort3 uses: Insertion sort
 
-How do you know?: TODO
+How do you know?: sort3 took the longest time to sort a sorted textfile
