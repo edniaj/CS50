@@ -1,10 +1,10 @@
-sort1 uses: TODO
+sort1 uses: Bubble sort
 
-How do you know?: TODO
+How do you know?: By process of elimination, sort 1 is insertion sort
 
-sort2 uses: TODO
+sort2 uses: Merge sort
 
-How do you know?: TODO
+How do you know?: sort2 took the shortest amount of time to sort the random text file
 
 sort3 uses: Insertion sort
 
