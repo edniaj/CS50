@@ -81,6 +81,7 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+    candidate newList[MAX];
     for (int i = 0; i < candidate_count; i++)
     {
         // Selection sort
@@ -94,6 +95,7 @@ void print_winner(void)
                 candidates[j] = temp;
             }
         }
+    newList[candidate_count-1] = candidates[candidate_count-1];
     }
 
     int highestValue = candidates[candidate_count - 1].votes;
