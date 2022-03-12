@@ -85,7 +85,7 @@ void print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         // Selection sort
-        int lowestVotes = -1;
+        int amountSwap = 0;
         for (int j = 0; j < candidate_count - i; j++)
         {
             if (lowestVotes > candidates[j].votes)
