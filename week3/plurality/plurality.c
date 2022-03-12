@@ -101,7 +101,7 @@ void print_winner(void)
     {
         if (newList[i].votes == highestValue)
         {
-            printf("%s\n", candidates[i].name);
+            printf("%s %i\n", newList[i].name, newList[i].votes);
         }
     }
     // Print out the name of the candidate who received the most votes in the election, and then print a newline.
