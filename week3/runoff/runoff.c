@@ -14,8 +14,7 @@ typedef struct
     string name;
     int votes;
     bool eliminated;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX_CANDIDATES];
@@ -34,50 +33,57 @@ void eliminate(int min);
 
 int main(int argc, string argv[])
 {
-    // Check for invalid usage
+    // Validation
     if (argc < 2)
     {
         printf("Usage: runoff [candidate ...]\n");
         return 1;
     }
 
-    // Populate array of candidates
     candidate_count = argc - 1;
     if (candidate_count > MAX_CANDIDATES)
     {
         printf("Maximum number of candidates is %i\n", MAX_CANDIDATES);
         return 2;
     }
+    // End of validation
+
+
+    // Populate array of candidates
     for (int i = 0; i < candidate_count; i++)
     {
         candidates[i].name = argv[i + 1];
         candidates[i].votes = 0;
-        candidates[i].eliminated = false;
+        candidates[i].eliminated = false; // i.e. candidates[0] = {name: 'Alpha', votes :5, eliminated: true}
     }
+    // End of populating array
 
+    // Initialising number of votes to loop
     voter_count = get_int("Number of voters: ");
     if (voter_count > MAX_VOTERS)
     {
         printf("Maximum number of voters is %i\n", MAX_VOTERS);
         return 3;
     }
+    // End of intialisation
 
-    // Keep querying for votes
+    // Query ith time where i is the number of voters
     for (int i = 0; i < voter_count; i++)
     {
 
-        // Query for each rank
+        // User input : Rank1 : Alpha, Rank2 : beta ... Rank 100 : Olel
         for (int j = 0; j < candidate_count; j++)
         {
             string name = get_string("Rank %i: ", j + 1);
 
             // Record vote, unless it's invalid
-            if (!vote(i, j, name))
+            if (!vote(i, j, name)) // Name == Valid candidate ->  You should update the global preferences array to
             {
-                printf("Invalid vote.\n");
+                printf("Invalid vote.\n");  // Manage Invalid votes
                 return 4;
             }
         }
+        // End of user input
 
         printf("\n");
     }
@@ -88,15 +94,18 @@ int main(int argc, string argv[])
         // Calculate votes given remaining candidates
         tabulate();
 
+
         // Check if election has been won
         bool won = print_winner();
         if (won)
         {
             break;
         }
+        // End of checking winner -> Break loop if theres a winner
+
 
         // Eliminate last-place candidates
-        int min = find_min();
+        int min = find_min(); // Find that loser
         bool tie = is_tie(min);
 
         // If tie, everyone wins
