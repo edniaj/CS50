@@ -90,14 +90,14 @@ void print_winner(void)
             // Compare to check if votes is higher / lower
             if (candidates[j].votes > candidates[j + 1].votes) //  j > j + 1
             {
-                printf("%s %s\n", candidates[j].name, candidates[j+1].name)
+                printf("%s %s\n", candidates[j].name, candidates[j+1].name);
                 candidate temp = candidates[j + 1]; //  temp = j+ 1
                 candidates[j + 1] = candidates[j];  // j+1 = j
                 candidates[j] = temp;               // j = j+1 ; j < j+1
             }
         }
     }
-    int highestValue = candidates[candidate_count - 1].name;
+    string highestValue = candidates[candidate_count - 1].name;
     for (int i = 0; i< candidate_count; i++)
     {
         printf("%s %i\n", candidates[i].name, candidates[i].votes);
