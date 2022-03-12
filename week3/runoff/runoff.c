@@ -161,7 +161,7 @@ void tabulate(void)
             else
             {
                 candidates[preferences[i][j]].votes++;
-                printf("%i : %s",candidates[preferences[i][j]].votes, candidates[preferences[i][j]].name );
+                printf("%i : %s\n",candidates[preferences[i][j]].votes, candidates[preferences[i][j]].name );
                 break;
             }
         }
@@ -177,6 +177,7 @@ bool print_winner(void)
     int minimumVote = (voter_count + 1) / 2;
     for (int i = 0; i < candidate_count; i++)
     {
+        printf("%i : %s\n",candidates[i].votes, candidates[i].name );
         if (candidates[i].votes > minimumVote)
         {
             printf("%s", candidates[i].name);
