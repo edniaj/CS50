@@ -157,10 +157,12 @@ void tabulate(void)
             }
             else
             {
-                
+
             }
         }
     }
+    // For loop through the number of voters
+    // Check preferences[i][j]
     // Check if candidate is eliminated
     // Add up vote count
     return;
