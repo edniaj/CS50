@@ -10,12 +10,11 @@ int main(int argc, string argv[])
 {
 
     // Convert key into index. Check for non-integer arvv[2]
-    if (argc <= 3) {
+    if (argc > 2) {
         printf("Usage: ./caesar key");
         return 1;
     }
-    const int keyInString = get_int("");
-    const int key = convertKey(argv[2]);
+    const int key = convertKey(argv[1]);
 
     string plainText = get_string("plaintext: ");
     int lengthText = strlen(plainText);
@@ -40,7 +39,7 @@ int main(int argc, string argv[])
             plainText[i] = (char)index;
         }
     }
-    printf("ciphertext: %s", plainText);
+    printf("ciphertext: %s\n", plainText);
 }
 
 int convertKey(string keyInString)
