@@ -60,7 +60,8 @@ int checkKey(string cipherKey)
             {
                 return 1;
             }
-            if (strcmp(&a, &b) == 0)
+            int value = strcmp(&a, &b);
+            if (value == 0)
             {
                 return 1;
             }
