@@ -85,19 +85,25 @@ void print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         // Selection sort
-        candidate lowestCandidate = candidate
-        for (int j = 0; j < candidate_count - i; j++)
+        candidate lowestCandidate = candidates[i];
+        for (int j = i; j < candidate_count - i; j++)
         {
-            if()
+            if (lowestCandidate.votes > candidates[j].votes)
+            {
+                lowestCandidate = candidates[j];
+            }
         }
-        string highestValue = candidates[candidate_count - 1].name;
-        for (int i = 0; i < candidate_count; i++)
-        {
-            printf("%s %i\n", candidates[i].name, candidates[i].votes);
-        }
-        // Print out the name of the candidate who received the most votes in the election, and then print a newline.
-
-        // if tie -> print out each candidate in separate line
-
-        return;
+        newList[i] = lowestCandidate;
     }
+    int highestValue = newList[candidate_count - 1].votes;
+    
+    for (int i = 0; i < candidate_count; i++)
+    {
+        printf("%s %i\n", candidates[i].name, candidates[i].votes);
+    }
+    // Print out the name of the candidate who received the most votes in the election, and then print a newline.
+
+    // if tie -> print out each candidate in separate line
+
+    return;
+}
