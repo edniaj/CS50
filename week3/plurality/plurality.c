@@ -85,20 +85,17 @@ void print_winner(void)
     for (int i = 0; i < candidate_count; i++)
     {
         // Selection sort
-        int lowestCandidate = 0;
+        int lowestVotes = -1;
         for (int j = 0; j < candidate_count - i; j++)
         {
-            candidate highest
-
-
-            // if (lowestCandidate.votes > candidates[j].votes)
-            // {
-            //     candidate temp = candidates[lowestCandidate];
-            //     candidates[lowestCandidate] = candidates[j];
-            //     candidates[j] = temp;
-            // }
+            if (lowestVotes > candidates[j].votes)
+            {
+                candidate temp = candidates[lowestCandidate];
+                candidates[lowestCandidate] = candidates[j];
+                candidates[j] = temp;
+            }
         }
-        // newList[i] = lowestCandidate;
+        newList[j] = lowestCandidate;
     }
     int highestValue;
     if (candidate_count > 1)
