@@ -99,7 +99,7 @@ void print_winner(void)
             {
                 candidate temp = newList[j + 1];
                 newList[j + 1] = newList[j];
-                newList[j] = newList[j + 1];
+                newList[j] = temp;
                 numberSwap++;
             }
         }
