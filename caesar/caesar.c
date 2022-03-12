@@ -10,12 +10,17 @@ int main(int argc, string argv[])
 {
 
     // Convert key into index. Check for non-integer arvv[2]
-    if (argc > 2) {
-        printf("Usage: ./caesar key");
+    if (argc > 2)
+    {
+        prinf("Usage: ./caesar key");
         return 1;
     }
     const int key = convertKey(argv[1]);
-
+    if (key == 0)
+    {
+        prinf("Usage: ./caesar key");
+        return 1;
+    }
     string plainText = get_string("plaintext: ");
     int lengthText = strlen(plainText);
 
@@ -50,11 +55,10 @@ int convertKey(string keyInString)
         // Check for each character
         if (isdigit(keyInString[i]) == 0)
         {
-            return 1;
+            return 0;
         }
-
     }
     int key = atoi(keyInString);
     key %= 26;
-    return key ;// Handle testcase where key is invalid later
+    return key; // Handle testcase where key is invalid later
 }
