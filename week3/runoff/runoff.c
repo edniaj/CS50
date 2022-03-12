@@ -157,13 +157,13 @@ void tabulate(void)
         {
             if (candidates[preferences[i][j]].eliminated)
             {
-                printf("%s was eliminated. We will continue with the for loop\n", candidates[preferences[i][j]].name);
+                // printf("%s was eliminated. We will continue with the for loop\n", candidates[preferences[i][j]].name);
                 continue;
             }
             else
             {
                 candidates[preferences[i][j]].votes++;
-                printf("%i : %s\n",candidates[preferences[i][j]].votes, candidates[preferences[i][j]].name );
+                // printf("%i : %s\n",candidates[preferences[i][j]].votes, candidates[preferences[i][j]].name );
                 break;
             }
         }
@@ -177,10 +177,10 @@ bool print_winner(void)
 {
     int winnerIndex = 0;
     int minimumVote = (voter_count + 1) / 2;
-    printf("\nPrinting winners\n");
+    // printf("\nPrinting winners\n");
     for (int i = 0; i < candidate_count; i++)
     {
-        printf("%i : %s\n",candidates[i].votes, candidates[i].name );
+        // printf("%i : %s\n",candidates[i].votes, candidates[i].name );
         if (candidates[i].votes > minimumVote)
         {
             printf("%s", candidates[i].name);
@@ -203,7 +203,7 @@ int find_min(void)
             minimumVote = candidates[i].votes;
         }
     }
-    printf("\nminimumVote: %i\n",minimumVote);
+    // printf("\nminimumVote: %i\n",minimumVote);
     return minimumVote;
 }
 
@@ -228,7 +228,7 @@ void eliminate(int min)
         if (candidates[i].votes == min)
         {
             candidates[i].eliminated = true;
-            printf("%s is eliminated",candidates[i].name);
+            // printf("%s is eliminated",candidates[i].name);
         }
     }
     return;
