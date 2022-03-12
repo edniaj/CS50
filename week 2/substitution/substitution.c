@@ -40,7 +40,8 @@ int main(int argc, string argv[])
     // convert plaintext to cipher text
 }
 
-int checkKey(string ciperKey){
-    plainText = tolower(plainText)
-    // Do a N^2 check to see for repetition
+int checkKey(string cipherKey){
+    const clone = tolower(plainText)
+    
+    // Do a N^2 check to see for repetition // Check isalpha
 }
