@@ -82,21 +82,11 @@ bool vote(string name)
 void print_winner(void)
 {
     candidate newList[candidate_count];
-    for (int i = 0; i < candidate_count; i++)
-    {
-        // Selection sort
-        candidate lowestCandidate = candidates[i];
-        for (int j = i; j < candidate_count - i; j++)
-        {
-            if (lowestCandidate.votes > candidates[j].votes)
-            {
-                candidate temp = lowestCandidate;
-                lowestCandidate = candidates[j];
-                candidates[j] = temp;
-            }
-        }
-        newList[i] = lowestCandidate;
+
+    for(int i=0; i< candidate_count; i++ ){
+        newList[i] = candidates[i];
     }
+
     int highestValue;
     if (candidate_count > 1)
     {
@@ -107,6 +97,7 @@ void print_winner(void)
         printf("%s\n", newList[0].name);
         return;
     }
+
 
     for (int i = 0; i < candidate_count; i++)
     {
