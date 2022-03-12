@@ -52,17 +52,20 @@ int checkKey(string cipherKey)
     {
         for (int j = i + 1; j < strlen(cipherKey); j++)
         {
+            char a = tolower(cipherKey[i]);
+            char b = tolower(cipherKey[j]);
             if (!isalpha(cipherKey[j]))
             {
                 printf("Invalid");
                 return 1;
             }
-            if (strcmp(tolower(cipherKey[j]), tolower(cipherKey[i])) != 0)
+            if (strcmp(&a, &b) == 0)
             {
                 printf("Invalid");
                 return 1;
             }
         }
     }
+    return 0;
     // Do a N^2 check to see for repetition // Check isalpha
 }
