@@ -1,6 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
-
+#include <string.h>
 // Max voters and candidates
 #define MAX_VOTERS 100
 #define MAX_CANDIDATES 9
@@ -157,7 +157,7 @@ void tabulate(void)
             }
             else
             {
-                candidates[preferences[i][j]].vote++;
+                candidates[preferences[i][j]].votes++;
             }
         }
     }
@@ -168,7 +168,10 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    // TODO
+    for (int i = 0; i < candidate_count; i++)
+    {
+
+    }
     return false;
 }
 
