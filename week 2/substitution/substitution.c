@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+
+int checkKey(string ciperKey);
 int main(int argc, string argv[])
 {
     string plainText = get_string("plaintext: "); //VCHPRZGJNTLSKFBDQWAXEUYMOI
@@ -36,4 +38,8 @@ int main(int argc, string argv[])
     // Use an if statement to convert back to upper / lowercase
 
     // convert plaintext to cipher text
+}
+
+int checkKey(string ciperKey){
+    
 }
