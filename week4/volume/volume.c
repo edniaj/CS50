@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]); // We will use this value to multiply
 
     // TODO: Copy header from input file to output file
-    
+
     // TODO: Read samples from input file and write updated data to output file
 
     // Loop through the file to find what u wan
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     fclose(output);
 }
 
-// Array of 44 uint8_ts (1byte)
+// Array of 44 uint8_ts ->  Represents 1byte
 // uint16_t -> Represents 2 byte
 
 // 1. WAV files begin with a 44-byte “header” that contains information about the file itself, including the size of the file, the number of samples per second, and the size of each sample.
