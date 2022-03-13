@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
     uint8_t *headerData = malloc(44);
     fread(headerData, 1, 44, input);
     fwrite(headerData, 1, 44, output);
-
-    //Unsure how much data to allocate
-    int16_t *buffer = malloc()
-
     free(headerData);
+    //Unsure how much data to allocate
+    int16_t placeHolder;
+
+    while()
 
 
     // Close files
