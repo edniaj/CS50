@@ -37,12 +37,12 @@ int main(int argc, char *argv[])
     uint8_t *headerData = malloc(44);
     fread(headerData, 1, 44, input);
     fwrite(headerData, 1, 44, output);
+
+    //Unsure how much data to allocate
+    int16_t *buffer = malloc()
+
     free(headerData);
 
-    // We got input from
-
-    // TODO: Read samples from input file and write updated data to output file
-    // Loop through the file to find what u wan
 
     // Close files
     fclose(input);
