@@ -7,6 +7,10 @@
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 
+struct uint8_ts{
+    
+}
+
 int main(int argc, char *argv[])
 {
     // Check command-line arguments
@@ -35,8 +39,9 @@ int main(int argc, char *argv[])
 
 
     // TODO: Copy header from input file to output file
+    uint8_ts *headerData = malloc(44);
 
-    //We got input from 
+    //We got input from
 
 
 
@@ -49,7 +54,7 @@ int main(int argc, char *argv[])
     fclose(output);
 }
 
-// Array of 44 uint8_ts ->  Represents 1byte
+
 // uint16_t -> Represents 2 byte
 
 // 1. WAV files begin with a 44-byte “header” that contains information about the file itself, including the size of the file, the number of samples per second, and the size of each sample.
