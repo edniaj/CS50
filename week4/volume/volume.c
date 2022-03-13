@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     //Unsure how much data to allocate
     int16_t placeHolder;
 
-    while()
+    while(fread( ))
 
 
     // Close files
