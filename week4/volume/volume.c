@@ -33,7 +33,12 @@ int main(int argc, char *argv[])
 
     float factor = atof(argv[3]); // We will use this value to multiply
 
+
     // TODO: Copy header from input file to output file
+
+    //We got input from 
+
+
 
     // TODO: Read samples from input file and write updated data to output file
 
