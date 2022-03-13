@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
     while(fread(&placeHolder, 2, 1, input))
     {
-        placeHolder *= factor;
+        placeHolder = placeHolder * factor;
         fwrite(&placeHolder, 2, 1, append);
     }
 
