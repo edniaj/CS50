@@ -46,6 +46,11 @@ int main(int argc, char *argv[])
     //Unsure how much data to allocate
     int16_t placeHolder;
 
+    // while(fread(&placeHolder, 2, 1, input))
+    // {
+    //     printf()
+    // }
+
     while(fread(&placeHolder, 2, 1, input))
     {
         placeHolder = placeHolder * factor;
