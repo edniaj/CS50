@@ -23,8 +23,7 @@ int main(int argc, char *argv[])
         printf("Could not open file.\n");
         return 1;
     }
-
-    FILE *output = fopen(argv[2], "w"); // this pointer will be used to write, *dereference to change value inside
+    FILE *output = fopen(argv[2], "w"); // this pointer will be used to write, 
     if (output == NULL)
     {
         printf("Could not open file.\n");
@@ -43,7 +42,8 @@ int main(int argc, char *argv[])
 
     while(fread(&placeHolder, 2, 1, input))
     {
-        
+        placeHolder *= factor;
+        fwrite(&placeHolder, 2, 1, output);
     }
 
 
