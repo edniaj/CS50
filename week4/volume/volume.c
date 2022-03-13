@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
-    char *c = malloc(44 * sizeof(char) );
+    
     // TODO: Read samples from input file and write updated data to output file
 
     // Close files
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     fclose(output);
 }
 
-// Array of 44 uint8_ts 
+// Array of 44 uint8_ts (1byte)
 // uint16_t -> Represents 2 byte
 
 // 1. WAV files begin with a 44-byte “header” that contains information about the file itself, including the size of the file, the number of samples per second, and the size of each sample.
