@@ -17,28 +17,28 @@ int main(int argc, char *argv[])
     }
 
     // Open files and determine scaling factor
-    FILE *input = fopen(argv[1], "r");
+    FILE *input = fopen(argv[1], "r"); // input is a pointer, Dereference it with *
     if (input == NULL)
     {
         printf("Could not open file.\n");
         return 1;
     }
 
-    FILE *output = fopen(argv[2], "w"); // this pointer will be used to write
+    FILE *output = fopen(argv[2], "w"); // this pointer will be used to write, *dereference to change value inside
     if (output == NULL)
     {
         printf("Could not open file.\n");
         return 1;
     }
 
-    float factor = atof(argv[3]);
+    float factor = atof(argv[3]); // We will use this value to multiply
 
     // TODO: Copy header from input file to output file
-
+    
     // TODO: Read samples from input file and write updated data to output file
 
     // Loop through the file to find what u wan
-    
+
     // Close files
     fclose(input);
     fclose(output);
