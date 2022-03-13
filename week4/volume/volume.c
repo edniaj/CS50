@@ -42,5 +42,10 @@ int main(int argc, char *argv[])
     fclose(output);
 }
 
+
+// 1. WAV files begin with a 44-byte “header” that contains information about the file itself, including the size of the file, the number of samples per second, and the size of each sample.
+// 2. After header WAV file contains a sequence of samples, each a single 2-byte (16-bit) integer representing the audio signal at a particular point in time.
+//
+
 //uint8_t is a type that stores an 8-bit unsigned integer. ->  each byte of a WAV file’s header as a uint8_t value.
 // int16_t is a type that stores a 16-bit signed integer. ->  each sample of audio in a WAV file as an int16_t value.
