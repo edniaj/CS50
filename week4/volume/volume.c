@@ -36,11 +36,9 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     uint8_t *headerData = malloc(44);
     fread(headerData, 1, 44, input);
-    fwrite()
+    fread(headerData, 1, 44, output);
     free(headerData);
 
-    int count = 0;
-    for (fgetc())
 
         // We got input from
 
