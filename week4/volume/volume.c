@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     while(fread(&placeHolder, 2, 1, input))
     {
         placeHolder = placeHolder * factor;
-        fwrite(&placeHolder, 2, 1, append);
+        fwrite(&placeHolder, 2, 1, output);
     }
 
 
