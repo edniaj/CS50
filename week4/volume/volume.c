@@ -23,13 +23,19 @@ int main(int argc, char *argv[])
         printf("Could not open file.\n");
         return 1;
     }
-    FILE *output = fopen(argv[2], "w"); // this pointer will be used to write, 
+    FILE *output = fopen(argv[2], "w"); // this pointer will be used to write,
     if (output == NULL)
     {
         printf("Could not open file.\n");
         return 1;
     }
 
+    FILE *append = fopen(argv[2], "a"); // this pointer will be used to write,
+    if (output == NULL)
+    {
+        printf("Could not open file.\n");
+        return 1;
+    }
     float factor = atof(argv[3]); // We will use this value to multiply
 
     // TODO: Copy header from input file to output file
@@ -43,12 +49,13 @@ int main(int argc, char *argv[])
     while(fread(&placeHolder, 2, 1, input))
     {
         placeHolder *= factor;
-        fwrite(&placeHolder, 2, 1, output);
+        fwrite(&placeHolder, 2, 1, append);
     }
 
 
     // Close files
     fclose(input);
+    fclose(append);
     fclose(output);
 }
 
