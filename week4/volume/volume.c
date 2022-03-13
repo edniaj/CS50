@@ -38,11 +38,9 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     uint8_t *headerData = malloc(44);
-    
-    for(int i=0; i<44; i++) {
-        headerData[i] = *(input+i);
-        printf("%i", headerData[i]);
-    }
+
+    int count =0;
+    for(fgetc())
 
 
     //We got input from
