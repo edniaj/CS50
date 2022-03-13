@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
     fclose(output);
 }
 
+// Array of 44 uint8_ts 
+// uint16_t -> Represents 2 byte
 
 // 1. WAV files begin with a 44-byte “header” that contains information about the file itself, including the size of the file, the number of samples per second, and the size of each sample.
 // 2. After header WAV file contains a sequence of samples, each a single 2-byte (16-bit) integer representing the audio signal at a particular point in time.
