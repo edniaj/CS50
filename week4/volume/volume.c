@@ -34,9 +34,11 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
-    
+
     // TODO: Read samples from input file and write updated data to output file
 
+    // Loop through the file to find what u wan
+    
     // Close files
     fclose(input);
     fclose(output);
