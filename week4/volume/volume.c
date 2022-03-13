@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *append = fopen(argv[2], "a"); // this pointer will be used to write,
     if (output == NULL)
     {
         printf("Could not open file.\n");
@@ -46,10 +45,10 @@ int main(int argc, char *argv[])
     //Unsure how much data to allocate
     int16_t placeHolder;
 
-    while(fread(&placeHolder, 2, 1, input))
-    {
-        printf('a');
-    }
+    // while(fread(&placeHolder, 2, 1, input))
+    // {
+    //     printf('a');
+    // }
 
     while(fread(&placeHolder, 2, 1, input))
     {
@@ -60,7 +59,6 @@ int main(int argc, char *argv[])
 
     // Close files
     fclose(input);
-    fclose(append);
     fclose(output);
 }
 
