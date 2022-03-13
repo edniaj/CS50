@@ -7,8 +7,6 @@
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 
-
-
 int main(int argc, char *argv[])
 {
     // Check command-line arguments
@@ -35,29 +33,25 @@ int main(int argc, char *argv[])
 
     float factor = atof(argv[3]); // We will use this value to multiply
 
-
     // TODO: Copy header from input file to output file
     uint8_t *headerData = malloc(44);
-    
+    fread(headerData, 1, 44, input);
+    fwrite()
     free(headerData);
 
-    int count =0;
-    for(fgetc())
+    int count = 0;
+    for (fgetc())
 
+        // We got input from
 
-    //We got input from
+        // TODO: Read samples from input file and write updated data to output file
 
+        // Loop through the file to find what u wan
 
-
-    // TODO: Read samples from input file and write updated data to output file
-
-    // Loop through the file to find what u wan
-
-    // Close files
-    fclose(input);
+        // Close files
+        fclose(input);
     fclose(output);
 }
-
 
 // uint16_t -> Represents 2 byte
 
@@ -65,5 +59,5 @@ int main(int argc, char *argv[])
 // 2. After header WAV file contains a sequence of samples, each a single 2-byte (16-bit) integer representing the audio signal at a particular point in time.
 //
 
-//uint8_t is a type that stores an 8-bit unsigned integer. ->  each byte of a WAV file’s header as a uint8_t value.
-// int16_t is a type that stores a 16-bit signed integer. ->  each sample of audio in a WAV file as an int16_t value.
+// uint8_t is a type that stores an 8-bit unsigned integer. ->  each byte of a WAV file’s header as a uint8_t value.
+//  int16_t is a type that stores a 16-bit signed integer. ->  each sample of audio in a WAV file as an int16_t value.
