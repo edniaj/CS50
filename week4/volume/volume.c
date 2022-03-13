@@ -41,3 +41,6 @@ int main(int argc, char *argv[])
     fclose(input);
     fclose(output);
 }
+
+//uint8_t is a type that stores an 8-bit unsigned integer. ->  each byte of a WAV file’s header as a uint8_t value.
+// int16_t is a type that stores a 16-bit signed integer. ->  each sample of audio in a WAV file as an int16_t value.
