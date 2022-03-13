@@ -7,9 +7,7 @@
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
 
-struct uint8_ts{
-    
-}
+
 
 int main(int argc, char *argv[])
 {
@@ -39,7 +37,12 @@ int main(int argc, char *argv[])
 
 
     // TODO: Copy header from input file to output file
-    uint8_ts *headerData = malloc(44);
+    uint8_t *headerData = malloc(44);
+    for(int i=0; i<44; i++) {
+        headerData[i] = *(input+i);
+        printf("%i", headerData[i]);
+    }
+
 
     //We got input from
 
