@@ -107,9 +107,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     tempBlue += image[k][t].rgbtBlue;
                 }
             }
-            tempRed = round(   (tempRed) / ((right - left + 1) * (top - bottom + 1)) > 255 ? 255 : (tempRed) / ((right - left + 1) * (top - bottom + 1))  );
-            tempGreen = round((tempGreen) / ((right - left + 1) * (top - bottom + 1))> 255 ? 255 :  (tempGreen) / ((right - left + 1) * (top - bottom + 1))  );
-            tempBlue = round((tempBlue) / ((right - left + 1) * (top - bottom + 1))> 255 ? 255 : (tempBlue) / ((right - left + 1) * (top - bottom + 1))  );
+            tempRed = round(   (tempRed) / ((right - left + 1.0) * (top - bottom + 1)) > 255 ? 255 : (tempRed) / ((right - left + 1) * (top - bottom + 1.0))  );
+            tempGreen = round((tempGreen) / ((right - left + 1.0) * (top - bottom + 1))> 255 ? 255 :  (tempGreen) / ((right - left + 1) * (top - bottom + 1.0))  );
+            tempBlue = round((tempBlue) / ((right - left + 1.0) * (top - bottom + 1))> 255 ? 255 : (tempBlue) / ((right - left + 1) * (top - bottom + 1.0))  );
             clone[i][j].rgbtRed = (BYTE) tempRed;
             clone[i][j].rgbtGreen =(BYTE)  tempGreen;
             clone[i][j].rgbtBlue =(BYTE)  tempBlue;
