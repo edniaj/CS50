@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 // Convert image to grayscale
-typedef uint8_t  BYTE;
+typedef uint8_t BYTE;
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++)
@@ -28,12 +28,14 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             BYTE originalRed = image[i][j].rgbtRed;
             BYTE originalGreen = image[i][j].rgbtGreen;
             BYTE originalBlue = image[i][j].rgbtBlue;
-            BYTE sepiaRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
-            BYTE sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
-            BYTE sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
-            image[i][j].rgbtBlue = sepiaRed;
-            image[i][j].rgbtRed = sepiaGreen;
-            image[i][j].rgbtGreen = sepiaBlue;
+
+            BYTE sepiaRed = .393 * originalRed + .769 * originalGreen + .189 * originalBlue;
+            BYTE sepiaGreen = .349 * originalRed + .686 * originalGreen + .168 * originalBlue;
+            BYTE sepiaBlue = .272 * originalRed + .534 * originalGreen + .131 * originalBlue;
+
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
         }
     }
     return;
