@@ -33,12 +33,15 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaGreen = .349 * originalRed + .686 * originalGreen + .168 * originalBlue;
             int sepiaBlue = .272 * originalRed + .534 * originalGreen + .131 * originalBlue;
 
-            if ( sepiaRed>255) sepiaRed = 255;
-            if ( sepiaGreen>255) sepiaGreen = 255;
-            if ( sepiaBlue>255) sepiaBlue = 255;
-            image[i][j].rgbtRed = (BYTE) sepiaRed;
-            image[i][j].rgbtGreen = (BYTE) sepiaGreen;
-            image[i][j].rgbtBlue = (BYTE) sepiaBlue;
+            if (sepiaRed > 255)
+                sepiaRed = 255;
+            if (sepiaGreen > 255)
+                sepiaGreen = 255;
+            if (sepiaBlue > 255)
+                sepiaBlue = 255;
+            image[i][j].rgbtRed = (BYTE)sepiaRed;
+            image[i][j].rgbtGreen = (BYTE)sepiaGreen;
+            image[i][j].rgbtBlue = (BYTE)sepiaBlue;
         }
     }
     return;
@@ -47,6 +50,24 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    int middleIndex = width / 2; // 03 -> 03 , 12 | 04 -> 04, 13, 22
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j <= middleIndex; j++)
+        {
+            BYTE tempRed = image[i][width - 1 - j].rgbtRed;
+            BYTE tempGreen = image[i][width - 1 - j].rgbtGreen;
+            BYTE tempBlue = image[i][width - 1 - j].rgbtBlue;
+
+            image[i][width - 1 - j].rgbtRed = image[i][j].rgbtRed;
+            image[i][width - 1 - j].rgbtGreen = image[i][j].rgbtGreen;
+            image[i][width - 1 - j].rgbtBlue = image[i][j].rgbtBlue;
+
+            image[i][j].rgbtRed = tempRed;
+            image[i][j].rgbtGreen = tempGreen;
+            image[i][j].rgbtBlue = tempBlue;
+        }
+    }
     return;
 }
 
