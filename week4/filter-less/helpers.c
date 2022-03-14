@@ -91,7 +91,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     total += image[k][t].rgbtRed
                 }
             }
-            BYTE setValue = round(total/9.0);
+            BYTE setValue = round(total/(k*t));
         }
     }
 }
