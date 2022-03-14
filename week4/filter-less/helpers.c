@@ -88,9 +88,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int t = bottom; t <=top; t++)
                 {
-                    total += 
+                    total += image[k][t].rgbtRed
                 }
             }
+            BYTE setValue = round(total/9.0);
         }
     }
 }
