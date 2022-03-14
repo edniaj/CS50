@@ -83,7 +83,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int right = i + 1 == width ? width - 1 : i + 1;
             int bottom = j - 1 < 0 ? 0 : j;
             int top = j + 1 == height ? height - 1 : j + 1;
-            int total = 0;
+            
             for (int k = left; k <= right; k++)
             {
                 for (int t = bottom; t <=top; t++)
@@ -91,8 +91,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     total += image[k][t].rgbtRed
                 }
             }
-            BYTE setValue = round(total/((left-right)*(top-bottom));
-            clone[i][j] = setValue;
+            BYTE setValue = round(total/((left-right+1)*(top-bottom+1));
+
         }
     }
     for (int i = 0; i < height; i++)
