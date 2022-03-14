@@ -74,7 +74,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    RGBTRIPLE clone = 
+    RGBTRIPLE clone[height][width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -92,6 +92,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             BYTE setValue = round(total/(k*t));
+            clone[i][j] = setValue;
         }
     }
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = clone[i][j];
+        }
+    }
+    return;
 }
