@@ -53,13 +53,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     //width = 3
     // height = 2
-    if (width%2 =0 )
+    int middleIndex;
+    if (width%2 ==0 )
     {
-        int middleIndex = (width /2) -1;
+        middleIndex = (width /2) -1;
     }
     else
     {
-        int middleIndex = width / 2; // -> 1
+        middleIndex = width / 2; // -> 1
     }
 
     for (int i = 0; i < height; i++) //2
