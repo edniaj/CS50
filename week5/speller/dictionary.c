@@ -72,7 +72,7 @@ bool load(const char *dictionary)
     // Generate our own hash function // all of them are islower()
     // Insert node into hash table at that location
 
-    return false; // If unable to open up a fiel
+    return false; // If unable to open up a file
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
