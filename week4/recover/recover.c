@@ -10,12 +10,22 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
         return 1;
 
     FILE *file = fopen(argv[1], "r");
+
+    int BLOCK_SIZE = 512;
     char* filename = malloc(20);
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
+
     int fileCount =0
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
+        //Lets check it its a jpeg
+        // If file have slacks, lets write it into a new file
+        if(buffer[511] == 0)
+        {
             sprintf(filename, "%03i.jpg", fileCount);
+            fileCount++;
+
+        }
     }
 
 
