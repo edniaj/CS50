@@ -18,23 +18,26 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
 
     int fileCount =1;
     int writingData = 0;
+    sprintf(fileName, "%0.3i.jpeg", fileCount);
+    FILE *pWriteFile = fopen(fileName, "w");
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
-        if (checkBuffer(buffer) )
+        if (checkBuffer(buffer) == 1)
         {
             writingData =1;
         }
 
-
-        //Lets check it its a jpeg
-            //If it is a jpeg, lets continue writing it until there is slack at the back
-            // Let's allow next loop to know we are still writing on a jpeg
-        // New file. No header data but we know its a jpeg since previous data has header data
-
-        if(buffer[511] == 0)
+        if (writingData ==1)
         {
+            fwrite(buffer, 1, 512,pWriteFile);
+        }
+        else if(buffer[511] == 0 && writingData == 1)
+        {
+            fwrite(buffer, 1, 512, pWriteFile);
+            fclose(pWritefile);
             fileCount++;
             sprintf(fileName, "%0.3i.jpeg", fileCount);
+            writingData = 0;
         }
 
     }
