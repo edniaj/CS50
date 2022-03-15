@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     FILE *pReadFile = fopen(argv[1], "r");
 
     int BLOCK_SIZE = 512;
-    char* fileName = malloc(7);
+    char fileName[8];
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
 
     int fileCount =0;
@@ -46,7 +46,6 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
 
     //
     free(buffer);
-    free(fileName);
 
     // Moreover, rather than read my memory card’s bytes one at a time, you can read 512 of them at a time into a buffer for efficiency’s sake
 
