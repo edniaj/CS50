@@ -8,7 +8,7 @@
 // Each person has two parents and two alleles
 typedef struct person
 {
-    struct person *parents[2];
+    struct person *parents[2]; // Pointing to the parents
     char alleles[2];
 }
 person;
