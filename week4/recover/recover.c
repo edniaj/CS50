@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 typedef uint8_t BYTE;
-void checkBuffer(BYTE);
+int checkBuffer(BYTE);
 
 int main(int argc, char *argv[]) // But you should ultimately find that the image contains 50 JPEGs.
 {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     FILE *pWriteFile = fopen(fileName, "w");
     while (fread(buffer, 1, BLOCK_SIZE, pReadFile) == BLOCK_SIZE)
     {
-        if (checkBuffer(buffer) == 1)
+        if (checkBuffer(*buffer) == 1)
         {
             writingData =1;
         }
@@ -34,10 +34,10 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
         else if(buffer[511] == 0 && writingData == 1)
         {
             fwrite(buffer, 1, 512, pWriteFile);
-            fclose(pWritefile);
+            fclose(pWriteFile);
             fileCount++;
             sprintf(fileName, "%0.3i.jpeg", fileCount);
-            FILE *pWriteFile = fopen(fileName, "w");
+            pWriteFile = fopen(fileName, "w");
             writingData = 0;
         }
 
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
 
     //
     free(buffer);
-    free(filename)
+    free(fileName);
 
     // Moreover, rather than read my memory card’s bytes one at a time, you can read 512 of them at a time into a buffer for efficiency’s sake
 
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     // . But the last byte of a JPEG might not fall at the very end of a block.
 }
 
-void checkBuffer(BYTE bufferData)
+int checkBuffer(BYTE bufferData)
 {
     if (bufferData[0] == 0xff && bufferData[1] == 0xd8 && buffer[2] == 0xff && (bufferData[3] & 0xf0)==0xe0 )
     {
