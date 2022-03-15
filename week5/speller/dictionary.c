@@ -5,6 +5,8 @@
 #include "dictionary.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
+#include <stringh.h>
 // Represents a node in a hash table
 typedef struct node
 {
@@ -26,7 +28,7 @@ bool check(const char *word)
     node *tmp = table[hashIndex];
     while (tmp != NULL)
     {
-        if(tmp->word == word)
+        if (strcasecmp(tmp->word, word) == 0)
         {
             return true;
         }
@@ -49,16 +51,16 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *pRead = fopen(dictionary, 'r');
+    FILE *pRead = fopen(*dictionary, 'r');
     if (pRead == NULL)
     {
         printf("Memory ran out of space");
-        return false
+        return false;
     }
 
     char *word = malloc(LENGTH + 1);
 
-    while (fscanf(word, "%s", word) != EOF)
+    while (fscanf(pRead, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
         n->next = NULL; // We will insert node from the front
@@ -77,7 +79,7 @@ bool load(const char *dictionary)
     }
     free(word);
     fclose(pRead);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
