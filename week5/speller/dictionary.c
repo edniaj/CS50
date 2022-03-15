@@ -63,15 +63,15 @@ bool load(const char *dictionary)
     while (fscanf(pReadFile, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
-        n->word = strcpy(word);
+        strcpy(n->word,word);
         int hashIndex = hash(n->word);
         if (table[hashIndex] == NULL)
         { // table[hashIndex] -> Head of pointer
-            table[hashIndex] = n
+            table[hashIndex] = n;
         }
         else
         {
-            n->next = table[hasIndex];
+            n->next = table[hashIndex];
         }
         totalWords++;
     }
