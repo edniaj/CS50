@@ -10,14 +10,18 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
         return 1;
 
     FILE *file = fopen(argv[1], "r");
+    char* filename = malloc(20);
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
-    // while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
-    // {
-    // }
-    char* filename = NULL;
-    sprintf(filename, "%03i.jpg", 2);
+    int fileCount =0
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    {
+            sprintf(filename, "%03i.jpg", fileCount);
+    }
+
+
     //
     free(buffer);
+    free(filename)
 
     // Moreover, rather than read my memory card’s bytes one at a time, you can read 512 of them at a time into a buffer for efficiency’s sake
 
