@@ -61,9 +61,15 @@ bool load(const char *dictionary)
     while (fscanf(pRead, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
-        n->next = NULL; // We will insert node from the front
+        if (n == NULL)
+        {
+            return false;
+        }
+
         strcpy(n->word, word);
+        n->next = NULL; // We will insert node from the front
         int hashIndex = hash(word);
+
         if (table[hashIndex] == NULL)
         {
             table[hashIndex] = n;
@@ -75,7 +81,6 @@ bool load(const char *dictionary)
         }
         totalWords++;
     }
-    free(word);
     fclose(pRead);
     return true;
 }
@@ -110,4 +115,3 @@ bool unload(void)
     }
     return true;
 }
-
