@@ -17,30 +17,21 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
 
     int fileCount =0;
-    int writingData = 0;
     sprintf(fileName, "%0.3i.jpg", fileCount);
     FILE *pWriteFile = fopen(fileName, "w");
     while (fread(buffer, 512, 1,pReadFile) == 1)
     {
         if (checkBuffer(buffer) == 1)
         {
-            writingData =1;
-        }
-        if (writingData ==1 && buffer[511] != 0)
-        {
-            fwrite(buffer,512, 1,pWriteFile);
-        }
-        else if (writingData ==1)
-        {
             fwrite(buffer, 512, 1, pWriteFile);
-            fclose(pWriteFile);
-            fileCount++;
-            sprintf(fileName, "%0.3i.jpg", fileCount);
-            pWriteFile = fopen(fileName, "w");
-            writingData = 0;
+            
+            // fclose(pWriteFile);
+            // fileCount++;
+            // sprintf(fileName, "%0.3i.jpg", fileCount);
+            // pWriteFile = fopen(fileName, "w");
         }
-
     }
+
 
     fclose(pWriteFile);
 
