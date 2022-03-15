@@ -13,15 +13,14 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     FILE *pReadFile = fopen(argv[1], "r");
 
     int BLOCK_SIZE = 512;
-    char* fileName = malloc(9);
+    char* fileName = malloc(7);
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
 
     int fileCount =0;
     int writingData = 0;
     sprintf(fileName, "%0.3i.jpg", fileCount);
     FILE *pWriteFile = fopen(fileName, "w");
-
-    while (fread(buffer, BLOCK_SIZE,1, pReadFile) == BLOCK_SIZE)
+    while (fread(buffer,1, 512, pReadFile) == BLOCK_SIZE)
     {
         if (checkBuffer(buffer) == 1)
         {
@@ -30,7 +29,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
 
         if (writingData ==1 && buffer[511] != 0)
         {
-            fwrite(buffer, 512, 1,pWriteFile);
+            fwrite(buffer,512, 1,pWriteFile);
         }
         else if (writingData ==1)
         {
