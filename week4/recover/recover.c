@@ -42,6 +42,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
         }
 
     }
+    
     fclose(pWriteFile);
 
     //
