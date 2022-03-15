@@ -4,7 +4,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <strings.h>
 #include <string.h>
+#include <cs50.h>
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -25,15 +27,17 @@ node *table[N];
 bool check(const char *word)
 {
     int hashIndex = hash(word);
-    node *tmp = table[hashIndex];
-    while (tmp != NULL)
+    for (int i = 0; i < N; i++)
     {
-        if (strcasecmp(tmp->word, word) == 0)
+        node *tmp = table[hashIndex];
+        while (tmp != NULL)
         {
-            return true;
+            if (strcasecmp(tmp->word, word) == 0)
+            {
+                return true;
+            }
+            tmp = tmp->next;
         }
-        node *tmp2 = table[i]->next;
-        tmp = tmp2;
     }
     return false;
 }
