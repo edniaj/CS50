@@ -56,7 +56,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char *word = malloc(LENGTH + 1);
+    char *word[46];
 
     while (fscanf(pRead, "%s", word) != EOF)
     {
@@ -75,7 +75,6 @@ bool load(const char *dictionary)
         }
         totalWords++;
     }
-    free(word);
     fclose(pRead);
     return true;
 }
