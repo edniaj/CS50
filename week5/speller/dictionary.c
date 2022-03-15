@@ -32,9 +32,7 @@ bool check(const char *word)
         {
             return true;
         }
-        node *tmp2 = tmp;
         tmp = tmp->next;
-        free(tmp2);
     }
     return false;
 }
