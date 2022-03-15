@@ -14,6 +14,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     // while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     // {
     // }
+    char* filename = NULL;
     sprintf(filename, "%03i.jpg", 2);
 
     // ###.jpg
