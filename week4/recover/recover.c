@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
         {
             fwrite(buffer, 1, 512,pWriteFile);
         }
-        else
+        else if (writingData ==1)
         {
             fwrite(buffer, 1, 512, pWriteFile);
             fclose(pWriteFile);
