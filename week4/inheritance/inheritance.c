@@ -77,7 +77,7 @@ person* create_family(int generations)
 void free_family(person* p) // Finally, the function calls free_family to free any memory that was previously allocated with malloc.
     {
     // TODO: Handle base case
-
+    
     // TODO: Free parents recursively
 
     // TODO: Free child
