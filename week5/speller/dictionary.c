@@ -10,8 +10,7 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 40;
@@ -30,23 +29,34 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int hashIndex = ((int) toupper(word[0]) * 4) % 40
-    return toupper(word[0]);
+    int hashIndex = ((int)toupper(word[0]) * 4) % 40 return toupper(word[0]);
 }
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *pRead = fopen(dictionary,'r');
+    FILE *pRead = fopen(dictionary, 'r');
     if (pRead == NULL)
     {
         printf("Memory ran out of space");
         return false
     }
 
-    char* word = malloc(45);
-    while(fscanf())
+    char *word = malloc(LENGTH + 1);
+    ;
+    while (fscanf(word, "%s", word) != EOF)
+    {
+        node *n = malloc(sizeof(node));
+        n->word = word;
+        int hashIndex = hash(word);
+        if (table[hashIndex] == NULL)
+        {
+            
+        }
+    }
+
+    free(word);
     return false;
 }
 
