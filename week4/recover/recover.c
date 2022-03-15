@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     FILE *pReadFile = fopen(argv[1], "r");
 
     int BLOCK_SIZE = 512;
-    char* fileName = malloc(8);
+    char* fileName = malloc(9);
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
 
     int fileCount =0;
