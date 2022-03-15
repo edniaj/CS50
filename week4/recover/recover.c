@@ -20,13 +20,13 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     int writingData = 0;
     sprintf(fileName, "%0.3i.jpg", fileCount);
     FILE *pWriteFile = fopen(fileName, "w");
-    while (fread(buffer,1, 512, pReadFile) == BLOCK_SIZE)
+    while (fread(buffer, 512, 1, pReadFile) == BLOCK_SIZE)
     {
+        printf("%i",buffer[10]);
         if (checkBuffer(buffer) == 1)
         {
             writingData =1;
         }
-
         if (writingData ==1 && buffer[511] != 0)
         {
             fwrite(buffer,512, 1,pWriteFile);
