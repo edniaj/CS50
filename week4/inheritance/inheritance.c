@@ -74,12 +74,22 @@ person* create_family(int generations)
     }
 
 // Free `p` and all ancestors of `p`.
-void free_family(person* p) // Finally, the function calls free_family to free any memory that was previously allocated with malloc.
+void free_family(person* p) // Assumption that there is no sibling
     {
     // TODO: Handle base case
-    
+        if(p->parents[0] == NULL)
+        {
+            free(p->parents[0]);
+            free(p->parents[1]);
+            return ;
+        }
     // TODO: Free parents recursively
-
+        else
+        {
+            free_family(p->parents[0]);
+            free_family(p->parents[1]);
+        }
+        free(p);
     // TODO: Free child
 
     }
