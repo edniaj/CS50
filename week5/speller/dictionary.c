@@ -24,20 +24,6 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    //     int index = hash(word);
-
-    //     node *cursor = table[index];
-    //     while (cursor != NULL)
-    //     {
-    //         if (strcasecmp(cursor->word, word) == 0)
-    //         {
-    //             return true;
-    //         }
-    //         cursor = cursor->next;
-    //     }
-    //     return false;
-    // }
-    // TODO
     int hashIndex = hash(word);
     node *tmp = table[hashIndex];
     while (tmp != NULL)
@@ -54,15 +40,8 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    int hashIndex = ((int)toupper(word[0]) * 4) % 50;
+    int hashIndex = ((int) toupper(word[0]) * 3) % 50;
     return hashIndex;
-    // int sum = 0;
-    // for (int i = 0; i < strlen(word); i++)
-    // {
-    //     sum += tolower(word[i]);
-    // }
-    // return (sum % N);
 }
 
 // Loads dictionary into memory, returning true if successful, else false
