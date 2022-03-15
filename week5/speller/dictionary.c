@@ -101,6 +101,7 @@ bool unload(void)
                 tmp = tmp->next;
                 free(tmp2);
             }
+            free(tmp);
         }
         else
         {
