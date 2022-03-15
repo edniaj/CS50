@@ -16,7 +16,7 @@ typedef struct node
 node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 45;
+const unsigned int N = 50;
 
 // Hash table
 node* table[N];
@@ -52,6 +52,7 @@ bool load(const char* dictionary)
         node *n = malloc(sizeof(node));
         n->word = strcpy(word);
         int hashIndex = hash(n->word);
+        table[hashIndex] = n;
     }
     // TODO
     // Open dictionary file
