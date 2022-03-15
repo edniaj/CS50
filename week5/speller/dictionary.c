@@ -14,7 +14,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 40;
+const unsigned int N = 50;
 
 // Hash table
 
@@ -24,38 +24,38 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    int index = hash(word);
+    //     int index = hash(word);
 
-    node *cursor = table[index];
-    while (cursor != NULL)
+    //     node *cursor = table[index];
+    //     while (cursor != NULL)
+    //     {
+    //         if (strcasecmp(cursor->word, word) == 0)
+    //         {
+    //             return true;
+    //         }
+    //         cursor = cursor->next;
+    //     }
+    //     return false;
+    // }
+    // TODO
+    int hashIndex = hash(word);
+    node *tmp = table[hashIndex];
+    while (tmp != NULL)
     {
-        if (strcasecmp(cursor->word, word) == 0)
+        if (strcasecmp(tmp->word, word) == 0)
         {
             return true;
         }
-        cursor = cursor->next;
+        tmp = tmp->next;
     }
     return false;
 }
-// TODO
-// int hashIndex = hash(word);
-// node *tmp = table[hashIndex];
-// while (tmp != NULL)
-// {
-//     if (strcasecmp(tmp->word, word) == 0)
-//     {
-//         return true;
-//     }
-//     tmp = tmp->next;
-// }
-// return false;
-// }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int hashIndex = ((int)toupper(word[0]) * 4) % 40;
+    int hashIndex = ((int)toupper(word[0]) * 4) % 50;
     return hashIndex;
     // int sum = 0;
     // for (int i = 0; i < strlen(word); i++)
