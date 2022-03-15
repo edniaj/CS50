@@ -51,7 +51,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *pRead = fopen(*dictionary, 'r');
+    FILE *pRead = fopen(dictionary, "r");
     if (pRead == NULL)
     {
         printf("Memory ran out of space");
@@ -72,7 +72,7 @@ bool load(const char *dictionary)
         }
         else
         {
-            n->next = table[hasHIndex];
+            n->next = table[hashIndex];
             table[hashIndex] = n;
         }
         totalWords++;
@@ -96,7 +96,7 @@ bool unload(void)
         if (table[i] != NULL)
         {
             node *tmp = table[i]->next;
-            free table[i];
+            free(table[i]);
             while (tmp != NULL)
             {
                 node *tmp2 = tmp;
