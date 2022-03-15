@@ -3,7 +3,8 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include "dictionary.h"
-
+#include <stdio.h>
+#include <stdlib.h>
 // Represents a node in a hash table
 typedef struct node
 {
@@ -37,6 +38,15 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    FILE *pRead = fopen(dictionary,'r');
+    if (pRead == NULL)
+    {
+        printf("Memory ran out of space");
+        return false
+    }
+
+    char* word = malloc(45);
+    while(fscanf())
     return false;
 }
 
