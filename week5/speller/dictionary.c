@@ -23,6 +23,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // traverse linked list, looking for the word (strcasecmp)
     return false;
 }
 
@@ -46,9 +47,9 @@ bool load(const char *dictionary)
         // Use malloc =>  if it returns NULL then fn return false
         // strcpy into node using strcpy
     /// Hash word to obtain a hash value
-        // Generate our own hash function
+        // Generate our own hash function // all of them are islower()
     // Insert node into hash table at that location
-        
+
     return false; // If unable to open up a fiel
 }
 
