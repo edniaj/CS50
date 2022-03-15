@@ -63,7 +63,6 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         n->next = NULL; // We will insert node from the front
         strcpy(n->word, word);
-        free(n);
         int hashIndex = hash(word);
         if (table[hashIndex] == NULL)
         {
@@ -111,3 +110,4 @@ bool unload(void)
     }
     return true;
 }
+
