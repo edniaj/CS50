@@ -19,7 +19,8 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
         //Lets check it its a jpeg
-        // If file have slacks, lets write it into a new file
+            //If it is a jpeg, lets continue writing it until there is slack at the back
+
         if(buffer[511] == 0)
         {
             sprintf(filename, "%03i.jpg", fileCount);
