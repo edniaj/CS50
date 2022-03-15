@@ -27,11 +27,11 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
             writingData =1;
         }
 
-        if (writingData ==1)
+        if (writingData ==1 && buffer[511] != 0)
         {
             fwrite(buffer, 1, 512,pWriteFile);
         }
-        else if(buffer[511] == 0 && writingData == 1)
+        else
         {
             fwrite(buffer, 1, 512, pWriteFile);
             fclose(pWriteFile);
