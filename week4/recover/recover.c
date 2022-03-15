@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
 
     int fileCount =0;
     int writingData = 0;
-    sprintf(fileName, "%0.3i.jpeg", fileCount);
+    sprintf(fileName, "%0.3i.jpg", fileCount);
     FILE *pWriteFile = fopen(fileName, "w");
     while (fread(buffer, 1, BLOCK_SIZE, pReadFile) == BLOCK_SIZE)
     {
