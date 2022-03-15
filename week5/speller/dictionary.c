@@ -37,7 +37,19 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    return false;
+    // Open dictionary file
+        // Check if return value is NULL
+
+    // Read strings from file one at a time
+        // fscanf(file, "%s", word) , reads word until it returns EOF (end of file)
+    //Create a new node for each word
+        // Use malloc =>  if it returns NULL then fn return false
+        // strcpy into node using strcpy
+    /// Hash word to obtain a hash value
+        // Generate our own hash function
+    // Insert node into hash table at that location
+        
+    return false; // If unable to open up a fiel
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
