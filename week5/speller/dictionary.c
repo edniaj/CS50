@@ -45,9 +45,10 @@ bool load(const char* dictionary)
         return false;
     }
     char* word[20];
-    while (fread(buffer, 20, 1,pReadFile) == 1)
+    if  (pReadFile != NULL)
     {
-
+        fscanf(pReadFile,"%s", buffer);
+        
     }
     // TODO
     // Open dictionary file
