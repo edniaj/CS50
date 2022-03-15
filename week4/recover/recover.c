@@ -36,13 +36,13 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
             fwrite(buffer, 1, 512, pWriteFile);
             fclose(pWriteFile);
             fileCount++;
-            sprintf(fileName, "%0.3i.jpeg", fileCount);
+            sprintf(fileName, "%0.3i.jpg", fileCount);
             pWriteFile = fopen(fileName, "w");
             writingData = 0;
         }
 
     }
-
+    fclose(pWriteFile);
 
     //
     free(buffer);
