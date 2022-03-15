@@ -3,14 +3,14 @@
 #include <stdint.h>
 
 typedef uint8_t BYTE;
-void checkBuffer(BYTE bufferData);
+void checkBuffer(BYTE);
 
 int main(int argc, char *argv[]) // But you should ultimately find that the image contains 50 JPEGs.
 {
     if (argc != 2)
         return 1;
 
-    FILE *file = fopen(argv[1], "r");
+    FILE *pReadFile = fopen(argv[1], "r");
 
     int BLOCK_SIZE = 512;
     char* fileName = malloc(20);
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     int writingData = 0;
     sprintf(fileName, "%0.3i.jpeg", fileCount);
     FILE *pWriteFile = fopen(fileName, "w");
-    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    while (fread(buffer, 1, BLOCK_SIZE, pReadFile) == BLOCK_SIZE)
     {
         if (checkBuffer(buffer) == 1)
         {
@@ -37,6 +37,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
             fclose(pWritefile);
             fileCount++;
             sprintf(fileName, "%0.3i.jpeg", fileCount);
+            FILE *pWriteFile = fopen(fileName, "w");
             writingData = 0;
         }
 
