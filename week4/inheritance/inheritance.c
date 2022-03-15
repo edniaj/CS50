@@ -9,7 +9,7 @@
 typedef struct person
 {
     struct person *parents[2]; // Pointing to the parents
-    char alleles[2];
+    char alleles[2];   // i.e. Stores ["A',"B'] , ["O","O"]
 }
 person;
 
