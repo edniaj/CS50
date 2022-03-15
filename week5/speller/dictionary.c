@@ -22,6 +22,18 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    int hashIndex = hash(word);
+    node *tmp = table[hashIndex];
+    while (tmp != NULL)
+    {
+        if(tmp->word == word)
+        {
+            return true;
+        }
+        node *tmp2 = tmp;
+        tmp = tmp->next;
+        free(tmp2);
+    }
     return false;
 }
 
@@ -81,11 +93,11 @@ bool unload(void)
     {
         if (table[i] != NULL)
         {
-            node* tmp = table[i]->next;
+            node *tmp = table[i]->next;
             free table[i];
-            while(tmp != NULL)
+            while (tmp != NULL)
             {
-                node* tmp2 = tmp;
+                node *tmp2 = tmp;
                 tmp = tmp->next;
                 free(tmp2);
             }
