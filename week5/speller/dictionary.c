@@ -1,5 +1,4 @@
 // Implements a dictionary's functionality
-
 #include <ctype.h>
 #include <stdbool.h>
 #include "dictionary.h"
@@ -16,9 +15,13 @@ typedef struct node
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 40;
-int totalWords = 0;
+
 // Hash table
 node *table[N];
+
+
+int totalWords = 0;
+
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -136,6 +139,7 @@ bool unload(void)
         }
     }
     return true;
+}
     // for (int i = 0; i < N; i++)
     // {
     //     if (table[i] != NULL)
@@ -156,4 +160,4 @@ bool unload(void)
     //     }
     // }
     // return true;
-}
+// }
