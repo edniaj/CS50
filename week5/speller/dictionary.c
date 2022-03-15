@@ -48,12 +48,14 @@ bool load(const char *dictionary)
     while (fscanf(word, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
-        n->word = word;
+        strcpy(n->word,word);
+        n->next = NULL; // We will insert node from the front
         int hashIndex = hash(word);
         if (table[hashIndex] == NULL)
         {
-            
+            table[hashIndex] =  n;
         }
+        
     }
 
     free(word);
