@@ -52,9 +52,14 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    FILE *pReadFile = fread(dictionary,s"r");
+    if (pReadFile == NULL)
+    {
+        printf("Lack of memory") return false;
+    }
 
     char *word[20];
-    while (fscanf(dictionary, "%s", word) != NULL)
+    while (fscanf(pReadFile, "%s", word) != NULL)
     {
         node *n = malloc(sizeof(node));
         n->word = strcpy(word);
