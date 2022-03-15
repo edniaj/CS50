@@ -68,7 +68,7 @@ person *create_family(int generations)
 }
 
 // Free `p` and all ancestors of `p`.
-void free_family(person *p)
+void free_family(person *p) // Finally, the function calls free_family to free any memory that was previously allocated with malloc.
 {
     // TODO: Handle base case
 
