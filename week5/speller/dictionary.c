@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
-#include <stringh.h>
+#include <string.h>
 // Represents a node in a hash table
 typedef struct node
 {
