@@ -29,7 +29,8 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int hashIndex = ((int)toupper(word[0]) * 4) % 40 return toupper(word[0]);
+    int hashIndex = ((int)toupper(word[0]) * 4) % 40;
+    return toupper(word[0]);
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -48,14 +49,18 @@ bool load(const char *dictionary)
     while (fscanf(word, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
-        strcpy(n->word,word);
+        strcpy(n->word, word);
         n->next = NULL; // We will insert node from the front
         int hashIndex = hash(word);
         if (table[hashIndex] == NULL)
         {
-            table[hashIndex] =  n;
+            table[hashIndex] = n;
         }
-        
+        else
+        {
+            n->next = table[hasIndex];
+            table[hashIndex] = n;
+        }
     }
 
     free(word);
