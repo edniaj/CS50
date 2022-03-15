@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 typedef uint8_t BYTE;
-int checkBuffer(BYTE);
+int checkBuffer(BYTE*);
 
 int main(int argc, char *argv[]) // But you should ultimately find that the image contains 50 JPEGs.
 {
@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     FILE *pWriteFile = fopen(fileName, "w");
     while (fread(buffer, 1, BLOCK_SIZE, pReadFile) == BLOCK_SIZE)
     {
-        if (checkBuffer(*buffer) == 1)
+        if (checkBuffer(buffer) == 1)
         {
             writingData =1;
         }
@@ -55,9 +55,9 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     // . But the last byte of a JPEG might not fall at the very end of a block.
 }
 
-int checkBuffer(BYTE bufferData)
+int checkBuffer(BYTE *bufferData)
 {
-    if (bufferData[0] == 0xff && bufferData[1] == 0xd8 && buffer[2] == 0xff && (bufferData[3] & 0xf0)==0xe0 )
+    if (bufferData[0] == 0xff && bufferData[1] == 0xd8 && bufferData[2] == 0xff && (bufferData[3] & 0xf0)==0xe0 )
     {
         return 1;
     }
