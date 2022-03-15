@@ -48,42 +48,70 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
-    FILE *pRead = fopen(dictionary, "r");
-    if (pRead == NULL)
+    FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
     {
-        printf("Memory ran out of space");
         return false;
     }
 
     char word[LENGTH + 1];
-
-    while (fscanf(pRead, "%s", word) != EOF)
+    while (fscanf(file, "%s", word) != EOF)
     {
-        node *n = malloc(sizeof(node));
-        if (n == NULL)
+        node *new_node = malloc(sizeof(node));
+        if (new_node == NULL)
         {
             return false;
         }
 
-        strcpy(n->word, word);
-        n->next = NULL; // We will insert node from the front
-        int hashIndex = hash(word);
+        strcpy(new_node->word, word);
+        new_node->next = NULL;
 
-        if (table[hashIndex] == NULL)
+        int index = hash(word);
+        if (table[index] == NULL)
         {
-            table[hashIndex] = n;
+            table[index] = new_node;
         }
         else
         {
-            n->next = table[hashIndex];
-            table[hashIndex] = n;
+            new_node->next = table[index];
+            table[index] = new_node;
         }
         totalWords++;
     }
-    fclose(pRead);
+    fclose(file);
     return true;
 }
+// TODO
+// FILE *pRead = fopen(dictionary, "r");
+// if (pRead == NULL)
+// {
+//     printf("Memory ran out of space");
+//     return false;
+// }
+
+// char word[LENGTH + 1];
+
+// while (fscanf(pRead, "%s", word) != EOF)
+// {
+//     node *n = malloc(sizeof(node));
+//     n->next = NULL; // We will insert node from the front
+//     strcpy(n->word, word);
+//     int hashIndex = hash(word);
+//     if (table[hashIndex] == NULL)
+//     {
+//         table[hashIndex] = n;
+//     }
+//     else
+//     {
+//         n->next = table[hashIndex];
+//         table[hashIndex] = n;
+//     }
+//     totalWords++;
+// }
+// free(word);
+// fclose(pRead);
+// return true;
+// }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
@@ -96,22 +124,36 @@ bool unload(void)
 {
     for (int i = 0; i < N; i++)
     {
-        if (table[i] != NULL)
+        node *head = table[i];
+        node *cursor = head;
+        node *tmp = head;
+
+        while (cursor != NULL)
         {
-            node *tmp = table[i]->next;
-            free(table[i]);
-            while (tmp != NULL)
-            {
-                node *tmp2 = tmp;
-                tmp = tmp->next;
-                free(tmp2);
-            }
+            cursor = cursor->next;
             free(tmp);
-        }
-        else
-        {
-            free(table[i]);
+            tmp = cursor;
         }
     }
     return true;
+    // for (int i = 0; i < N; i++)
+    // {
+    //     if (table[i] != NULL)
+    //     {
+    //         node *tmp = table[i]->next;
+    //         free(table[i]);
+    //         while (tmp != NULL)
+    //         {
+    //             node *tmp2 = tmp;
+    //             tmp = tmp->next;
+    //             free(tmp2);
+    //         }
+    //         free(tmp);
+    //     }
+    //     else
+    //     {
+    //         free(table[i]);
+    //     }
+    // }
+    // return true;
 }
