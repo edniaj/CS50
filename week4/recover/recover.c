@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
     char* fileName = malloc(20);
     BYTE *buffer = malloc(sizeof(BYTE) * 512);
 
-    int fileCount =1;
+    int fileCount =0;
     int writingData = 0;
     sprintf(fileName, "%0.3i.jpeg", fileCount);
     FILE *pWriteFile = fopen(fileName, "w");
@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
         }
 
     }
-    
+
     fclose(pWriteFile);
 
     //
