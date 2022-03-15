@@ -3,6 +3,7 @@
         "*.html": "jinja-html",
         "cs50.h": "c",
         "stdio.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "stdint.h": "c"
     }
 }
