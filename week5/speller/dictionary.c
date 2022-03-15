@@ -72,7 +72,7 @@ bool load(const char *dictionary)
         }
         else
         {
-            n->next = table[hasIndex];
+            n->next = table[hasHIndex];
             table[hashIndex] = n;
         }
         totalWords++;
@@ -91,7 +91,7 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (let i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
         {
