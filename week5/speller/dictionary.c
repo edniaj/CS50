@@ -14,7 +14,7 @@ typedef struct node
     struct node *next;
 } node;
 
-unsigned int totalWords =0;
+unsigned int totalWords = 0;
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 50;
 
@@ -24,8 +24,17 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
-    // traverse linked list, looking for the word (strcasecmp)
+    int hashIndex = hash(word);
+    node *tmp = table[hashIndex];
+    while (tmp != NULL)
+    {
+        if (strcasecmp(tmp->word, word) == 0)
+        {
+            return true;
+        }
+        node *tmp2 = table[i]->next;
+        tmp = tmp2;
+    }
     return false;
 }
 
@@ -87,13 +96,17 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for(int i=0; i<N; i++)
+    for (int i = 0; i < N; i++)
     {
-        for(node* tmp = table[i]; tmp->next !=NULL; tmp = tmp->next)
+        node *tmp = table[i];
+        while (tmp != NULL)
         {
-            
+            node *tmp2 = table[i]->next;
+            free(table[i]);
+            tmp = tmp2;
         }
-
+        if (i == N - 1)
+            return true;
     }
     return false;
 }
