@@ -52,7 +52,7 @@ bool load(const char* dictionary)
         node *n = malloc(sizeof(node));
         n->word = strcpy(word);
         int hashIndex = hash(n->word);
-        table[hashIndex] = n;
+        table[hashIndex] = n; // table[hashIndex] -> Head of pointer
     }
     // TODO
     // Open dictionary file
