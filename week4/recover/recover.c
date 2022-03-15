@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef uint8_t BYTE;
+
 int main(int argc, char *argv[]) // But you should ultimately find that the image contains 50 JPEGs.
 {
-    if (argc != 2) return 1;
-
+    if (argc != 2)
+        return 1;
 
     FILE *file = fopen(argv[1], "r");
 
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    {
+    }
 
     // ###.jpg
     // Moreover, rather than read my memory card’s bytes one at a time, you can read 512 of them at a time into a buffer for efficiency’s sake
@@ -16,3 +21,7 @@ int main(int argc, char *argv[]) // But you should ultimately find that the imag
 
     // . But the last byte of a JPEG might not fall at the very end of a block.
 }
+
+// rm -f *.jpg to remove all the jpg
+
+//check50 cs50/problems/2022/x/recover
