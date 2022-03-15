@@ -44,11 +44,13 @@ bool load(const char* dictionary)
         printf("Lack of memory")
         return false;
     }
+
     char* word[20];
-    if  (pReadFile != NULL)
+    while (fscanf(pReadFile,"%s", word) != NULL)
     {
-        fscanf(pReadFile,"%s", buffer);
-        
+        node *n = malloc(sizeof(node));
+        n->word = strcpy(word);
+        int hashIndex = hash(n->word);
     }
     // TODO
     // Open dictionary file
