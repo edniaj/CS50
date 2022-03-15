@@ -33,7 +33,7 @@ bool check(const char* word)
 unsigned int hash(const char* word)
     {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'a' +strlen(word);
+    return toupper(word[0]) - 'a' + strlen(word);
     }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -41,19 +41,27 @@ bool load(const char* dictionary)
     {
     FILE* pReadFile = fread();
     if (pReadFile == NULL)
-    {
+        {
         printf("Lack of memory")
-        return false;
-    }
+            return false;
+        }
 
     char* word[20];
-    while (fscanf(pReadFile,"%s", word) != NULL)
-    {
-        node *n = malloc(sizeof(node));
+    while (fscanf(pReadFile, "%s", word) != NULL)
+        {
+        node* n = malloc(sizeof(node));
         n->word = strcpy(word);
         int hashIndex = hash(n->word);
-        table[hashIndex] = n; // table[hashIndex] -> Head of pointer
-    }
+        if (table[hashIndex] == NULL)
+            {// table[hashIndex] -> Head of pointer
+            table[hashIndex] = n
+            }
+        else
+            {
+
+            }
+
+        }
     // TODO
     // Open dictionary file
         // Check if return value is NULL
