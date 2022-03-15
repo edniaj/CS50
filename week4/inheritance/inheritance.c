@@ -79,17 +79,16 @@ void free_family(person* p) // Assumption that there is no sibling
     // TODO: Handle base case
         if(p->parents[0] == NULL)
         {
-            free(p->parents[0]);
-            free(p->parents[1]);
+            free(p); // Since there's no more parent, free this node and return
             return ;
         }
     // TODO: Free parents recursively
         else
         {
-            free_family(p->parents[0]);
+            free_family(p->parents[0]); // There is parents, lets dive deep into the parents
             free_family(p->parents[1]);
         }
-        free(p);
+        free(p); // I am  done freeing the parent, lets free the kid.
     // TODO: Free child
 
     }
