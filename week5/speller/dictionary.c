@@ -107,5 +107,5 @@ bool unload(void)
             free(table[i]);
         }
     }
-    return false;
+    return true;
 }
