@@ -45,7 +45,7 @@ bool load(const char *dictionary)
     }
 
     char *word = malloc(LENGTH + 1);
-    ;
+
     while (fscanf(word, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
@@ -61,9 +61,10 @@ bool load(const char *dictionary)
             n->next = table[hasIndex];
             table[hashIndex] = n;
         }
+        totalWords++;
     }
-
     free(word);
+    fclose(pRead);
     return false;
 }
 
