@@ -23,7 +23,7 @@ def main():
     for i in range(lengthCard-1,-1,-2) :
         total += int(cardNumber[i])
 
-    if total % 10 ==0:
+    if total % 10 !=0:
         print('INVALID\n')
         return
 
