@@ -14,10 +14,23 @@ def main():
 
     listStr = list(people[0].keys())
     listStr.remove('name')
-    print(listStr)
+    txtObj = {}
+    for i in listStr:
+        txtObj[i] = 0
+
     # TODO: Read DNA sequence file into a varible
     with open(sys.argv[2], "r") as file:
         txt = file.read()
+        for str in listStr:
+            temp = txt
+            temp.replace(str,'@')
+            for i in temp:
+                if i == '@':
+                    txtObj[i] += 1
+        file.close()
+    print(txtObj)
+
+
 
 
 
