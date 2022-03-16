@@ -8,7 +8,7 @@ def main():
     for i in range(height):
         gap = ' ' * (height - 1 - i)
         tower = '#' * (i+1)
-        print(f'{gap}{tower} {tower}')
+        print(f'{gap}{tower}  {tower}')
 
 main()
 
