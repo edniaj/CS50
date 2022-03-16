@@ -40,14 +40,14 @@ def main():
                 if longestPerson == '':
                     longestPerson = i
                     longestKey = j
-                if (txtObj[j] > longestPerson[longestKey]):
-                    longestPerson = i
-                    longestKey = j
+                else:
+                    if (txtObj[j] > longestPerson[longestKey]):
+                        longestPerson = i
+                        longestKey = j
     if longestPerson == '':
         print('No  match')
     else:
         print(longestPerson['name'])
-
 
 
 def longest_match(sequence, subsequence):
