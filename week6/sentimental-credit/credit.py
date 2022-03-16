@@ -16,7 +16,7 @@ def main():
     total = 0
     for i in range(lengthCard-2,-1,-2) :
         temp = 2 * int(cardNumber[i])
-        if temp > 10:
+        if temp >= 10:
             temp -=10
             total +=1
         total += temp
