@@ -15,4 +15,5 @@ with open("hogwarts.csv", "r") as file:
         house = row["House"]
         houses[house] +=1
 
+
 print(houses)
