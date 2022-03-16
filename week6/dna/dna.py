@@ -33,7 +33,7 @@ def main():
     longestKey = listStr[0]
     for i in listStr:
         if txtObj[i] > txtObj[longestKey]:
-            longestKey = txtObj
+            longestKey = i
 
     # print(people)
     for i in people:
