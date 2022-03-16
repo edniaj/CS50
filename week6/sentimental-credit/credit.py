@@ -6,5 +6,5 @@ def main():
     firstNumber = int(cardNumber[0])
     secondNumber = int(cardNumber[1])
 
-    for(i in range(lengthCard-2, ))
+    for(i in range(lengthCard-2,-1,-2))
 main()
