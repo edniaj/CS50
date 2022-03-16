@@ -35,7 +35,7 @@ def main():
     for i in people:
         count = 0
         for j in listStr:
-            if txtObj[j] == i[j]:
+            if int(txtObj[j]) == int(i[j]):
                 count +=1
             print(txtObj[j], i[j])
         print(count)
