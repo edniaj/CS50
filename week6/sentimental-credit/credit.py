@@ -29,9 +29,9 @@ def main():
 
     if (len(cardNumber) in [13,16]) and cardNumber[0] == '4':
         print('VISA\n')
-    if (len(cardNumber) == 15) and cardNumber[0] in ['34','37']:
+    if (len(cardNumber) == 15) and cardNumber[0:2] in ['34','37']:
         print('AMEX\n')
-    if (len(cardNumber) == 16) and cardNumber[0] in ['51','52','53','54','55']:
+    if (len(cardNumber) == 16) and cardNumber[0:2] in ['51','52','53','54','55']:
         print('MASTERCARD\n')
     # VISA = {
         # start with 4
