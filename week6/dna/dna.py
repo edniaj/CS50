@@ -27,6 +27,8 @@ def main():
     for people in peoples:
         count = 0
         for key in listStr:
+            print(people['name'], key)
+            print(people[key], txtObj[key])
             if people[key] == txtObj[key]:
                 count +=1
         if count == len(listStr):
