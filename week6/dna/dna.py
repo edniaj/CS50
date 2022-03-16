@@ -16,18 +16,22 @@ def main():
         file.close()
     with open (argv[2],"r") as file:
         txt = file.read()
+        file.close()
+    txtObj = {}
+    listStr = list(peoples[0].keys())
+    listStr.remove('name')
+
+    for key in listStr:
+        txtObj[key] = longest_match(txt,key)
+
     for people in peoples:
-        for key in people:
-            if( key == 'name'):
+        for key in listStr:
+            if people[key] != txtObj[key]:
                 continue
-            people[key] = longest_match(txt,key)
-            # TODO: Read DNA sequence file into a variable
+        print(people['name'])
+        return
 
-            # TODO: Find longest match of each STR in DNA sequence
-
-            # TODO: Check database for matching profiles
-    print(peoples)
-    return
+    print()
 
 
 def longest_match(sequence, subsequence):
