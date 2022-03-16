@@ -44,7 +44,7 @@ def main():
                         longestPerson = i
                         longestKey = j
     if longestPerson == '':
-        print('No  match')
+        print('No match')
     else:
         print(longestPerson['name'])
 
