@@ -31,7 +31,8 @@ def main():
         print(people['name'])
         return
 
-    print()
+    print('No match')
+    return
 
 
 def longest_match(sequence, subsequence):
