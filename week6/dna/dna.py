@@ -13,7 +13,8 @@ def main():
         people = list(reader)
         print(people)
 
-    # TODO: Read DNA sequence file into a variabl
+    # TODO: Read DNA sequence file into a varible
+    
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
