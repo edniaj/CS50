@@ -41,7 +41,7 @@ def main():
                     longestPerson = i
                     longestKey = j
                 else:
-                    if (txtObj[j] > longestPerson[longestKey]):
+                    if (int(txtObj[j]) > int(longestPerson[longestKey])):
                         longestPerson = i
                         longestKey = j
     if longestPerson == '':
