@@ -29,7 +29,7 @@ def main():
                     txtObj[str] += 1
         file.close()
 
-    # print(txtObj)
+    print(txtObj)
 
     # print(people)
     for i in people:
