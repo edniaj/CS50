@@ -25,15 +25,15 @@ def main():
         txtObj[key] = longest_match(txt,key)
 
     for people in peoples:
+        count = 0
         for key in listStr:
-            if people[key] != txtObj[key]:
-                continue
-        print(people['name'])
-        return
-
+            if people[key] == txtObj[key]:
+                count +=1
+        if count == len(listStr):
+            print(people['name'])
+            return
     print('No match')
     return
-
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
