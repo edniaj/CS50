@@ -21,11 +21,22 @@ def main():
     for(i in range(lengthCard-1,-1,-2)):
         total += int(cardNumber[i])
 
-    if total !=20:
+    if total % 10 ==0:
         print('INVALID\N')
         return
 
-    
+
+    # VISA = {
+        # start with 4
+    #     length: [13,16],
+
+    # }
+    # AMEX = {
+    #     length: [15, start with 34 or 37]
+    # }
+    # MASTERCARD = { length 16, start with 51, 52 , 53 , 54 , 55 }
+
+
 
 
 
