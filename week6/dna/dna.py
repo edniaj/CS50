@@ -21,20 +21,24 @@ def main():
     # TODO: Read DNA sequence file into a varible
     with open(sys.argv[2], "r") as file:
         txt = file.read()
-    #     for str in listStr:
-    #         temp = txt
-    #         temp = temp.replace(str,'@')
-    #         for i in temp:
-    #             if i == '@':
-    #                 txtObj[str] += 1
+        for str in listStr:
+            temp = txt
+            temp = temp.replace(str,'@')
+            for i in temp:
+                if i == '@':
+                    txtObj[str] += 1
         file.close()
+
     # print(txtObj)
 
-    # TODO: Find longest match of each STR in DNA sequence
-    # for i in listStr:
-    #     longestMatch = longest_match(txt, )
-    print(people)
-    # TODO: Check database for matching profiles
+    # print(people)
+    for i in people:
+        count = 0
+        for j in listStr:
+            if txtObj[j] == i[j]:
+                count +=1
+        if count == len(listStr):
+            return i['name']
 
     return
 
