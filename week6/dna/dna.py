@@ -29,7 +29,6 @@ def main():
                     txtObj[str] += 1
         file.close()
 
-    print(txtObj)
 
     # print(people)
     longestPerson = ''
