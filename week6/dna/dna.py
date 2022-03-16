@@ -40,7 +40,8 @@ def main():
             print(txtObj[j], i[j])
         print(count)
         if count == (len(listStr) ):
-            return i['name']
+            print(i['name'])
+            return
 
     return
 
