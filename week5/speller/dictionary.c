@@ -74,7 +74,6 @@ bool load(const char *dictionary)
         }
         totalWords++;
     }
-    free(word);
     fclose(pRead);
     return true;
 }
