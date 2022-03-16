@@ -23,7 +23,7 @@ def main():
         txt = file.read()
         for str in listStr:
             temp = txt
-            temp = temp.replace(str,'@')
+            temp = temp.replace(str, '@')
             for i in temp:
                 if i == '@':
                     txtObj[str] += 1
@@ -31,19 +31,23 @@ def main():
 
     print(txtObj)
 
-
     # print(people)
-    longestPerson = people[0]
+    longestPerson = ''
     longestKey = listStr[0]
     for i in people:
         for j in listStr:
             if int(txtObj[j]) == int(i[j]):
+                if longestPerson == '':
+                    longestPerson = i
+                    longestKey = j
                 if (txtObj[j] > longestPerson[longestKey]):
                     longestPerson = i
                     longestKey = j
-    
-    print('No  match')
-    return
+    if longestPerson == '':
+        print('No  match')
+    else:
+        print(longestPerson['name'])
+
 
 
 def longest_match(sequence, subsequence):
