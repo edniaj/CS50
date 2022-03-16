@@ -11,12 +11,17 @@ def main():
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         people = list(reader)
-        print(people)
 
+    print(people[].keys())
     # TODO: Read DNA sequence file into a varible
     with open(sys.argv[2], "r") as file:
-        for i in people:
-            
+        txt = file.read()
+
+
+
+
+
+
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
