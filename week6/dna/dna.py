@@ -37,6 +37,7 @@ def main():
         for j in listStr:
             if txtObj[j] == i[j]:
                 count +=1
+            print(txtObj[j], i[j])
         print(count)
         if count == (len(listStr) ):
             return i['name']
