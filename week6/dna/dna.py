@@ -4,11 +4,11 @@ import sys
 
 def main():
 
-    if len(sys.argv[1]) != 2:
+    if len(sys.argv) != 3:
         sys.exit(0)
 
     # TODO: Read database file into a variable
-
+    people = {}
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
         print(reader)
