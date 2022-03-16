@@ -33,13 +33,15 @@ def main():
 
 
     # print(people)
+    longestPerson = people[0]
+    longestKey = listStr[0]
     for i in people:
         for j in listStr:
             if int(txtObj[j]) == int(i[j]):
-                count +=1
-            print(txtObj[j], i[j])
-
-
+                if (txtObj[j] > longestPerson[longestKey]):
+                    longestPerson = i
+                    longestKey = j
+    
     print('No  match')
     return
 
