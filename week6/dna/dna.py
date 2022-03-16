@@ -4,18 +4,16 @@ import sys
 
 def main():
 
-
-    if len(sys.argv[1] !=2):
+    if len(sys.argv[1]) != 2:
         sys.exit(0)
 
     # TODO: Read database file into a variable
 
-    with open("", "r") as file:
-        
+    with open(sys.argv[1], "r") as file:
+        reader = csv.DictReader(file)
+        print(reader)
 
-
-    # TODO: Read DNA sequence file into a variable
-
+    # TODO: Read DNA sequence file into a variabl
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
