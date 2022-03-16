@@ -23,7 +23,7 @@ def main():
         txt = file.read()
         for str in listStr:
             temp = txt
-            temp.replace('T','b')
+            temp = temp.replace(str,'@')
             for i in temp:
                 if i == '@':
                     txtObj[i] += 1
