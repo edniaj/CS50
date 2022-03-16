@@ -26,7 +26,7 @@ def main():
             temp = temp.replace(str,'@')
             for i in temp:
                 if i == '@':
-                    txtObj[i] += 1
+                    txtObj[str] += 1
         file.close()
     print(txtObj)
 
