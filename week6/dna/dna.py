@@ -12,7 +12,9 @@ def main():
         reader = csv.DictReader(file)
         people = list(reader)
 
-    print(people[].keys())
+    listStr = list(people[0].keys())
+    listStr.remove('name')
+    print(listStr)
     # TODO: Read DNA sequence file into a varible
     with open(sys.argv[2], "r") as file:
         txt = file.read()
