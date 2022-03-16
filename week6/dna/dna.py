@@ -14,15 +14,19 @@ def main():
         reader = csv.DictReader(file)
         peoples = list(reader)
         file.close()
+    with open (argv[2],"r") as file:
+        txt = file.read()
     for people in peoples:
         for key in people:
-            
-    # TODO: Read DNA sequence file into a variable
+            if( key == 'name'):
+                continue
+            people[key] = longest_match(txt,key)
+            # TODO: Read DNA sequence file into a variable
 
-    # TODO: Find longest match of each STR in DNA sequence
+            # TODO: Find longest match of each STR in DNA sequence
 
-    # TODO: Check database for matching profiles
-
+            # TODO: Check database for matching profiles
+    print(peoples)
     return
 
 
