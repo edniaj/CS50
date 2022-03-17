@@ -1,4 +1,4 @@
-check50 cs50/problems/2022/x/readability
+
 from cs50 import get_string
 
 def main():
@@ -19,8 +19,9 @@ def main():
     S = temp * sentence
     index = round(0.0588 * L - 0.296 * S - 15.8)
     if index >=16:
-        return 'Grade ',round(index),'+\n'
-    return 'Grade ',round(index),'\n'
+        print('Grade ',round(index),'+\n')
+        return
+    print('Grade ',round(index),'\n')
 main()
 
 # Recall that the Coleman-Liau index is computed as 0.0588 * L - 0.296 * S - 15.8,
