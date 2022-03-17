@@ -5,7 +5,7 @@
 #include <ctype.h>
 int main(void)
 {
-    char word[40];
+    string word;
     int wordCount =1;
     int charCount = 0;
     int sentence = 0;
@@ -33,6 +33,12 @@ int main(void)
             sentence++;
         }
     }
-    printf("\n%i %i %i ",wordCount, charCount, sentence);
+    printf("\n %i %i %i",wordCount, charCount, sentence);
+    float temp = 100 / wordCount;
+    float L = temp * charCount;
+    float S = temp * sentence;
+    int index = 0.0588 * L - 0.296 * S - 15.8;
+    printf("%i", index);
+
 }
 
