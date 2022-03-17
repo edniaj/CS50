@@ -47,18 +47,17 @@ int main(void)
     // float t = 0.0588 * L - 0.296 * S - 15.8;
     // printf("%f",t);
     int index = round (0.0588 * L - 0.296 * S - 15.8 ); // 24.78 - 1.24 - 15.8 = 7.7 ~ 8
-    printf("index=%i", index);
     if (index >=16)
     {
-        printf('Grade 16+');
+        printf("Grade 16+");
     }
     if (index <1)
     {
-        printf('Before Grade 1');
+        printf("Before Grade 1");
         }
     else
         {
-            printf('Grade %i',index));
+            printf("Grade %i",index);
         }
 
 }
