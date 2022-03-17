@@ -5,14 +5,14 @@
 #include <ctype.h>
 int main(void)
 {
-    char *word = malloc(40);
+    char word[40];
     int wordCount =1;
     int charCount = 0;
     int sentence = 0;
     word = get_string("Text: ");
     for(int i=0; i<strlen(word); i++)
     {
-        if (strcmp(word[i]," ") == 0)
+        if (word[i] == ' ')
         {
             wordCount++;
         }
@@ -20,20 +20,19 @@ int main(void)
         {
             charCount++;
         }
-        if (strcmp(word[i],"?") == 0 )
+        if (word[i] == '?')
         {
             sentence++;
         }
-        if (strcmp(word[i],".") == 0 )
+        if (word[i] == '.')
         {
             sentence++;
         }
-        if (strcmp(word[i],"!") == 0 )
+        if (word[i] == '!')
         {
             sentence++;
         }
     }
-    free(word);
     printf("\n%i %i %i ",wordCount, charCount, sentence);
 }
 
