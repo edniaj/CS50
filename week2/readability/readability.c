@@ -5,7 +5,7 @@
 #include <ctype.h>
 int main(void)
 {
-    char word[40];
+    char *word = malloc(40);
     int wordCount =1;
     int charCount = 0;
     int sentence = 0;
@@ -33,6 +33,7 @@ int main(void)
             sentence++
         }
     }
+    free(word)
     printf("\n%i %i %i ",wordCount, charCount, sentence);
 }
 
