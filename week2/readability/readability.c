@@ -39,9 +39,9 @@ int main(void)
     float S = temp * sentence;
     printf("\nL =%f S=%f",L,S);
     float t = 0.0588 * L;
-    printf("%f",t);
+    printf("0.0588 * L = %f\n",t);
     t = 0.296 * S;
-    printf("%f",t);
+    printf(" - 0.296 * S  =%f",t);
     int index = 0.0588 * L - 0.296 * S - 15.8;
     printf("\nindex=%i\n", index);
 
