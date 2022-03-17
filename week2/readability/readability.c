@@ -34,7 +34,7 @@ int main(void)
         }
     }
     printf("\n %i %i %i",wordCount, charCount, sentence);
-    float temp = 100 / wordCount;
+    float temp = 100 / wordCount; 
     float L = temp * charCount;
     float S = temp * sentence;
     printf("\nL =%f S=%f",L,S);
