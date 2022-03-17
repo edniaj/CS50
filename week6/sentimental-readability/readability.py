@@ -18,8 +18,8 @@ def main():
     L = temp * character
     S = temp * sentence
     index = 0.0588 * L - 0.296 * S - 15.8
-    print(round(index))
-
+    print('Grade ',round(index),'\n')
+    return
 main()
 
 # Recall that the Coleman-Liau index is computed as 0.0588 * L - 0.296 * S - 15.8,
