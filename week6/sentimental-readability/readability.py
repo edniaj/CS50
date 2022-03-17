@@ -1,5 +1,8 @@
+check50 cs50/problems/2022/x/readability
+from cs50 import get_string
+
 def main():
-    txt = input("Text: ")
+    txt = get_string("Text: ")
     wordCount = 1
     character = 0
     sentence = 0
@@ -15,8 +18,7 @@ def main():
     L = temp * character
     S = temp * sentence
     index = 0.0588 * L - 0.296 * S - 15.8
-    print(wordCount,'  ',character,'  ',sentence)
-    print(index)
+    print(round(index))
 
 main()
 
