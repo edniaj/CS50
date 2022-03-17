@@ -17,9 +17,10 @@ def main():
     # i. e. word = 4, temp = 25, 5 char in 4 word. 125 char in 100 word.  temp * char = 25 * 5 = 125. 5 char in 500 word. tmp = 0.2,
     L = temp * character
     S = temp * sentence
-    index = 0.0588 * L - 0.296 * S - 15.8
-    print('Grade ',round(index),'\n')
-    return
+    index = round(0.0588 * L - 0.296 * S - 15.8)
+    if index >=16:
+        return 'Grade ',round(index),'+\n'
+    return 'Grade ',round(index),'\n'
 main()
 
 # Recall that the Coleman-Liau index is computed as 0.0588 * L - 0.296 * S - 15.8,
