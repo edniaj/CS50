@@ -8,4 +8,8 @@ int main(void)
     int charCount = 0;
     int sentence = 0;
     word = get_string("Text: ");
+    for(int i=0; i<strlen(word); i++)
+    {
+
+    }
 }
