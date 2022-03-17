@@ -37,9 +37,13 @@ int main(void)
     float temp = 100 / wordCount;
     float L = temp * charCount;
     float S = temp * sentence;
-    printf("L =%f S=%f",L,S);
+    printf("\nL =%f S=%f",L,S);
+    float t = 0.0588 * L;
+    printf("%f",t);
+    t = 0.296 * S;
+    printf("%f",t);
     int index = 0.0588 * L - 0.296 * S - 15.8;
-    printf("\nindex=%i", index);
+    printf("\nindex=%i\n", index);
 
 }
 
