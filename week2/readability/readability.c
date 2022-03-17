@@ -50,6 +50,7 @@ int main(void)
     if (index >=16)
     {
         printf("Grade 16+\n");
+        return 0;
     }
     if (index <1)
     {
