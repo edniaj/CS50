@@ -10,7 +10,7 @@ def main():
             character +=1
         if word in ['?','!','.']:
             sentence += 1
-    temp =  100/word
+    temp =  100/wordCount
     # i. e. word = 4, temp = 25, 5 char in 4 word. 125 char in 100 word.  temp * char = 25 * 5 = 125. 5 char in 500 word. tmp = 0.2,
     L = temp * character
     S = temp * sentence
