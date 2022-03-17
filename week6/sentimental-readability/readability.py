@@ -19,7 +19,7 @@ def main():
     S = temp * sentence
     index = round(0.0588 * L - 0.296 * S - 15.8)
     if index >=16:
-        print('Grade ',16,'+\n')
+        print('Grade 16+')
         return
     elif index <1:
         print('Before Grade 1')
