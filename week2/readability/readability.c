@@ -12,28 +12,28 @@ int main(void)
     word = get_string("Text: ");
     for(int i=0; i<strlen(word); i++)
     {
-        if (strcmp(word[i]," ") == 0)
+        if (strcmp(&word[i]," ") == 0)
         {
-            wordCount++
+            wordCount++;
         }
-        if (isalpha(word[i]) != 0)
+        if (isalpha(&word[i]) != 0)
         {
-            charCount++
+            charCount++;
         }
-        if (strcmp(word[i],"?") == 0 )
+        if (strcmp(&word[i],"?") == 0 )
         {
-            sentence++
+            sentence++;
         }
-        if (strcmp(word[i],".") == 0 )
+        if (strcmp(&word[i],".") == 0 )
         {
-            sentence++
+            sentence++;
         }
-        if (strcmp(word[i],"!") == 0 )
+        if (strcmp(&word[i],"!") == 0 )
         {
-            sentence++
+            sentence++;
         }
     }
-    free(word)
+    free(word);
     printf("\n%i %i %i ",wordCount, charCount, sentence);
 }
 
