@@ -10,6 +10,7 @@ def main():
             character +=1
         if word in ['?','!','.']:
             sentence += 1
+    L = character / ( word)
     print(wordCount,'  ',character,'  ',sentence)
 
 main()
