@@ -19,9 +19,12 @@ def main():
     S = temp * sentence
     index = round(0.0588 * L - 0.296 * S - 15.8)
     if index >=16:
-        print('Grade ',round(index),'+\n')
+        print('Grade ',16,'+\n')
         return
-    print('Grade ',round(index),'\n')
+    elif index <1:
+        print('Before Grade 1')
+    else:
+        print('Grade ',round(index),'\n')
 main()
 
 # Recall that the Coleman-Liau index is computed as 0.0588 * L - 0.296 * S - 15.8,
