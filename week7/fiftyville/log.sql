@@ -41,17 +41,10 @@ phone to purchase the flight ticket.
 
 
 
-
-
-Kenny
-Iman
-Benista
-Taylor
-Brooke
-Luca
-Diana
-Bruce
-Kaelyn
+Iman 1
+Luca 1
+Diana 1
+Bruce 1
 
 
 SELECT name
