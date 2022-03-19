@@ -5,7 +5,7 @@ WHERE id in (
 	FROM movies JOIN stars on movies.id = stars.movie_id
 	WHERE movies.year =2004
 )
-ORDER BY birth DESC
+ORDER BY birth ASC
 
 -- write a SQL query to list the names of all people who starred in a movie released in 2004, ordered by birth year.
 -- Your query should output a table with a single column for the name of each person.
