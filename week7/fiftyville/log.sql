@@ -3,10 +3,21 @@
 
 
 
-4/ Im the bakery owner, and someone came in, suspiciously whispering into a phone for about half an hour. They never bought anything.
+(130) 555-0289	(996) 555-8899	2021	7	28	51
+(499) 555-9472	(892) 555-8872	2021	7	28	36
+(367) 555-5533	(375) 555-8161	2021	7	28	45
+(609) 555-5876	(389) 555-5198	2021	7	28	60
+(499) 555-9472	(717) 555-1342	2021	7	28	50
+(286) 555-6063	(676) 555-6554	2021	7	28	43
+(770) 555-1861	(725) 555-3243	2021	7	28	49
+(031) 555-6622	(910) 555-3251	2021	7	28	38
+(826) 555-1652	(066) 555-9701	2021	7	28	55
+(338) 555-6650	(704) 555-2131	2021	7	28	54
 
 
-
+SELECT *
+FROM phone_calls
+WHERE year = 2021 and month = 7 and day =28 and duration <= 60
 
 3.1/  Investigate phone number
 
