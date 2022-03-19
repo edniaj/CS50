@@ -1,5 +1,16 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
+DESTINATION -> LaGuardia Airport
+
+SELECT full_name
+FROM airports
+WHERE id in
+(
+	SELECT destination_airport_id
+	FROM flights
+	WHERE year = 2021 and month = 7 and day =29
+	ORDER by hour ASC LIMIT 1
+)
 
 
 3.2/ Investigate earliest flight
