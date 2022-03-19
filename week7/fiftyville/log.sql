@@ -6,7 +6,10 @@
 4/ Im the bakery owner, and someone came in, suspiciously whispering into a phone for about half an hour. They never bought anything.
 
 
+
+
 3.1/  Investigate phone number
+
 As the thief was leaving the bakery, they called someone who talked to them for less than a minute. In the call, I heard the thief say
 that they were planning to take the earliest flight out of Fiftyville tomorrow. The thief then asked the person on the other end of the
 phone to purchase the flight ticket.
