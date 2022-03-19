@@ -1,5 +1,5 @@
 SELECT title
-FROM movies JOIN ratings ON movies.id = ratings.movie_id
+FROM movies
 WHERE id in (
 	SELECT movie_id
 	FROM ratings
