@@ -49,8 +49,8 @@ Matching Phone number with people
 
 Iman 1
 Luca 1
-Diana 1
-Bruce 1
+Diana 1 (770) 555-1861
+Bruce 1 (367) 555-5533
 Matching license plate with people
 
 SELECT name
