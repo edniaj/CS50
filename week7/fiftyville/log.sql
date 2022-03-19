@@ -40,12 +40,18 @@ phone to purchase the flight ticket.
 3/
 
 
+Diana 1
+Bruce 1
+Matching Phone number with people
+
+
+
 
 Iman 1
 Luca 1
 Diana 1
 Bruce 1
-
+Matching license plate with people
 
 SELECT name
 FROM people
