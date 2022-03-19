@@ -1,4 +1,4 @@
 SELECT title, year
 FROM movies
 WHERE title LIKE "HARRY POTTER%"
-ORDER BY year DESC
+ORDER BY year ASC
