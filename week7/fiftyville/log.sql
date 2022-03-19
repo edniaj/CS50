@@ -14,7 +14,20 @@ phone to purchase the flight ticket.
 I was walking by the ATM on Leggett Street and saw the thief there withdrawing some money.
 
 
-1.1/ 
+1.1/ Potential license plate
+5P2BI95
+94KL13X
+6P58WS2
+4328GD8
+G412CB7
+L93JTIZ
+322W7JE
+0NTHK55
+
+SELECT *
+FROM bakery_security_logs
+WHERE month = 7 AND day = 28 AND year = 2021 AND hour = 10 AND minute <= 25
+
 1/ Sometime within ten minutes of the theft, I saw the thief get into a car in the bakery parking lot and drive away.
 If you have security footage from the bakery parking lot, you might want to look for cars that left the parking lot in that time frame.
 
