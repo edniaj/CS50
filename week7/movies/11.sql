@@ -1,5 +1,5 @@
 SELECT title
-FROM movies
+FROM movies JOIN ratings ON movies.id = ratings.movie_id
 WHERE id in (
 	SELECT movie_id
 	FROM ratings
@@ -11,6 +11,7 @@ WHERE id in (
 	ORDER BY ratings.rating DESC
 	LIMIT 5
 )
+
 
 
 
