@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
-        <title>Trivia!</title>
-        <script>
-            // TODO: Add code to check answers to questions
-            document.querySelector(".answer1").addEvent
-        </script>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Trivia!</h1>
-        </div>
 
-        <div class="container">
-            <div class="section">
-                <h2>Part 1: Multiple Choice </h2>
-                <hr>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
 
-                <!-- TODO: Add multiple choice question here -->
-                <div id="question1">
-                    <h3>What is the ratio of people to sheep in New Zealand?</h3>
-                    <div id="feedback1">
-                    </div>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+
+            <!-- TODO: Add multiple choice question here -->
+            <div id="question1">
+                <h3>What is the ratio of people to sheep in New Zealand?</h3>
+                <div id="feedback1">
                 </div>
-                <button class="answer1">1 </button> <button class="answer1">2 </button> <button class="answer1"> 3</button>
             </div>
-
-            <div class="section">
-                <h2>Part 2: Free Response</h2>
-                <hr>
-                <!-- TODO: Add free response question here -->
-            </div>
+            <button class="answer1">1 </button>
+            <button class="answer1">2 </button>
+            <button class="answer1">3</button>
         </div>
-    </body>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>The answer is test123</h3>
+            <div id="feedback2">
+            </div>
+            <input type="text" name="text" id="freeResponse">
+            <button id="submitText">Submit</button>
+        </div>
+    </div>
+</body>
+<script>
+    // TODO: Add code to check answers to questions
+    document.querySelectorAll(".answer1").forEach(x => x.addEventListener("click", (event) => {
+        if (event.target.innerText == '2') {
+            event.target.style.backgroundColor = 'green'
+            document.querySelector("#feedback1").innerText = "Correct!"
+        } else {
+            event.target.style.backgroundColor = 'red'
+            document.querySelector("#feedback1").innerText = "Incorrect!"
+        }
+    }))
+
+    document.querySelector("#submitText").addEventListener("click", (event) => {
+        inputValue = document.querySelector("#freeResponse")
+        if (freeResponse.value == 'test123') {
+            freeResponse.style.backgroundColor = 'green'
+            document.querySelector("#feedback2").innerText = "Correct!"
+        }
+        else {
+            freeResponse.style.backgroundColor = 'red'
+            document.querySelector("#feedback2").innerText = "Incorrect!"
+        }
+
+    })
+
+</script>
+
 </html>
