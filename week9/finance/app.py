@@ -131,7 +131,7 @@ def register():
         # no errors
         hash = generate_password_hash(password)
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name,hash)
-
+        return redirect("/")
     if request.method == "GET":
         return render_template("register.html")
 
