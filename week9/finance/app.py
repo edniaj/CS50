@@ -121,15 +121,20 @@ def register():
         name = request.form.get("name")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+
+        # managing error
         if password != confirmation:
             return apology("Password does not match")
         if name == "" or password == "" or confirmation == "" :
             return apology("Walao")
-        
-        db.execute("INSERT INTO birthdays (name, hash) VALUES(?, ?,?)", name,hash)
+
+        # no errors
+        hash = generate_password_hash(password)
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name,hash)
+
     if request.method == "GET":
         return render_template("register.html")
-    # return apology("TODO")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
