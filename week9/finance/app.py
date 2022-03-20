@@ -115,7 +115,7 @@ def quote():
     if request.method == "POST":
         value = lookup(request.form.get("symbol"))
         print(value)
-        return render_template("quote.html")
+        return render_template("quoted.html",value=value)
 '''
 Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
 Submit the user’s input via POST to /quote.
