@@ -1,10 +1,16 @@
 {% extends "layout.html" %}
-
-{% block title %}
-    Register
-{% endblock %}
-
+{% block title %}Register{% endblock %}
 {% block main %}
-    <!-- https://memegen.link/ -->
-    asdf
+    <form action="" method="post">
+    <div>
+        <label for="">Name</label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="">Password</label>
+        <input type="text" name="password">
+    </div>
+
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}
