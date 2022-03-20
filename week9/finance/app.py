@@ -39,7 +39,7 @@ def after_request(response):
     return response
 
 
-@app.route("/")
+@app.route("/") 
 @login_required
 def index():
     """Show portfolio of stocks"""
