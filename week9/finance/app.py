@@ -111,10 +111,11 @@ def logout():
 @login_required
 def quote():
     if request.method == "GET":
-
         return render_template("quote.html")
     if request.method == "POST":
-        return apology("TODO")
+        value = lookup(request.form.get("symbol"))
+        print(value)
+        return render_template("quote.html")
 '''
 Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
 Submit the user’s input via POST to /quote.
