@@ -22,7 +22,13 @@
                         <option value={{month}}> {{month}} </option>
                         {%endfor%}
                     </select>
-                    <input type="submit" value="">
+                    <label>Day</label>
+                    <select name="day">
+                        {%for day in days%}
+                        <option value={{day}}> {{day}} </option>
+                        {%endfor%}
+                    </select>
+                    <input type="submit" value="Submit">
                     </form>
                 </div>
                 <div class="section">
