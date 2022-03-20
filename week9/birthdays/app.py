@@ -46,8 +46,9 @@ def index():
 # query the birthdays.db database for all birthdays -> Pass all of that data to your index.html template.
 
 # Render table -> Each row should have two columns: name, birthday
-# When the / route is requested via POST, your web application should add a new birthday to your database and then re-render the index page.
+# When the / route is requested via POST, your web application should add a new birthday to your database and then re-render the index page. (Redirect)
 # First, in index.html, add an HTML form. The form should let users type in a name, a birthday month, and a birthday day. Be sure the form submits to / (its “action”) with a method of post.
+
 # Then, in app.py, add logic in your POST request handling to INSERT a new row into the birthdays table based on the data supplied by the user.
 # Optionally, you may also:
 
