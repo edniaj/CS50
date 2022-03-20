@@ -126,6 +126,7 @@ def register():
         if name == "" or password == "" or confirmation == "" :
             return apology("Walao")
         
+        db.execute("INSERT INTO birthdays (name, hash) VALUES(?, ?,?)", name,hash)
     if request.method == "GET":
         return render_template("register.html")
     # return apology("TODO")
