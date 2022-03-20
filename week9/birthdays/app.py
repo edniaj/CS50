@@ -26,7 +26,7 @@ def after_request(response):
 def index():
     if request.method == "POST":
 
-        # TODO: Add the user's entry into the database
+        db.execute("INSERT INTO ")
 
         return redirect("/")
 
@@ -38,7 +38,7 @@ def index():
 
 
 
-
+#
 # Complete the implementation of a web application to let users store and keep track of birthdays.
 
 # GET, in a table, all of the people in your database along with their birthdays.
@@ -49,7 +49,7 @@ def index():
 # When the / route is requested via POST, your web application should add a new birthday to your database and then re-render the index page. (Redirect)
 # First, in index.html, add an HTML form. The form should let users type in a name, a birthday month, and a birthday day. Be sure the form submits to / (its “action”) with a method of post.
 
-# Then, in app.py, add logic in your POST request handling to INSERT a new row into the birthdays table based on the data supplied by the user.
+# Then, in app.py, add logic in your POST request handling to INSERT a new row into the birthdays table based on the data supplied by the user. (Using SQL)
 # Optionally, you may also:
 
 # Add the ability to delete and/or edit birthday entries.
