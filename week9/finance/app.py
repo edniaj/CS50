@@ -130,6 +130,7 @@ def register():
 
         # no errors
         hash = generate_password_hash(password)
+        if db.execute("SELECT * FROM users WHERE username = ")
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name,hash)
         return redirect("/")
     if request.method == "GET":
