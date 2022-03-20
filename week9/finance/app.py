@@ -130,9 +130,13 @@ def register():
 
         # no errors
         hash = generate_password_hash(password)
-        if db.execute("SELECT * FROM users WHERE username = ")
+        if db.execute("SELECT * FROM users WHERE username  = ?", name):
+            return apology("User exists in the database")
+
         db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name,hash)
+
         return redirect("/")
+
     if request.method == "GET":
         return render_template("register.html")
 
