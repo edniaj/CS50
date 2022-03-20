@@ -125,6 +125,7 @@ def register():
             return apology("Password does not match")
         if name == "" or password == "" or confirmation == "" :
             return apology("Walao")
+        
     if request.method == "GET":
         return render_template("register.html")
     # return apology("TODO")
