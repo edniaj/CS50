@@ -39,7 +39,7 @@ def after_request(response):
     return response
 
 
-@app.route("/") 
+@app.route("/")
 @login_required
 def index():
     """Show portfolio of stocks"""
@@ -125,3 +125,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     return apology("TODO")
+
+
+# jinja filter configures Flask to store sessions on the local filesystem (i.e., disk) as opposed to storing them inside of (digitally signed) cookies,
+# which is Flask’s default. The file then configures CS50’s SQL module to use finance.db.
