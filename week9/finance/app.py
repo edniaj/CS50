@@ -110,8 +110,11 @@ def logout():
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
-    """Get stock quote."""
-    return apology("TODO")
+    if request.method == "GET":
+
+        return render_template("quote.html")
+    if request.method == "POST":
+        return apology("TODO")
 '''
 Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
 Submit the user’s input via POST to /quote.
