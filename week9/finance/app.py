@@ -62,8 +62,9 @@ def buy():
         except:
             return apology("Bro... positive integer number only")
         price = value["price"]
-        print(session)
-        # db.execute("SELECT cash FROM users WHERE username = ?",)
+        id = session["user_id"]
+        balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
+        print(balance)
         return redirect("/buy")
 
     if request.method == "GET":
