@@ -45,6 +45,7 @@ def index():
     """Show portfolio of stocks"""
     rows = db.execute("SELECT * FROM receipts WHERE user_id = ?", session['user_id'])
     # [{'id': 5, 'price': 23.22, 'amount': 33, 'symbol': 't', 'user_id': 3}, {'id': 6, 'price': 905.39, 'amount': 1, 'symbol': 'TSLA', 'user_id': 3}]
+    balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
     accountHoldings = {}
     for i in rows:
         amount = i['amount']
@@ -52,6 +53,7 @@ def index():
             accountHoldings[i['symbol']] = amount
         else:
             accountHoldings[i['symbol']] += amount
+    print(accountHoldings)
     return render_template("index.html")
 
 
