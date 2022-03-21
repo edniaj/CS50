@@ -7,7 +7,7 @@ from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd
-
+import datetime
 # Configure application
 app = Flask(__name__)
 
@@ -101,9 +101,9 @@ def buy():
 
         if afterDeduction < 0:
             return apology("No money no honey")
-
+        writeDate = str(datetime.datetime.now())
         db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
-        db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,id,"buy")
+        db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action,date) VALUES(?,?,?,?,?, ?)",price,amount,symbol,id,"buy",writeDate)
         # db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name,hash)
         return redirect("/buy")
 
@@ -234,9 +234,9 @@ def sell():
             print(cashback)
             cashBalance += cashback
             print(cashBalance)
+            writeDate = str(datetime.datetime.now())
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
-            db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,session["user_id"],"sell")
-
+            db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action,date) VALUES(?,?,?,?,?, ?)",price,amount,symbol,session["user_id"],"sell",writeDate)
         return render_template("sell.html")
     #     price = value["price"]
     #     id = session["user_id"]
