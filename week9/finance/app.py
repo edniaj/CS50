@@ -48,10 +48,11 @@ def index():
     accountHoldings = {}
     for i in rows:
         amount = i['amount']
+        price = lookup(i['symbol'])['price']
         if i['symbol'] not in accountHoldings.keys():
-            accountHoldings[i['symbol']] = amount
+            accountHoldings[i['symbol']] = {"amount":amount, "price":price}
         else:
-            accountHoldings[i['symbol']] += amount
+            accountHoldings[i['symbol']]['amount'] += amount
     print(accountHoldings)
     print("balance = ",balance)
     return render_template("index.html", balance=balance)
