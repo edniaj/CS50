@@ -209,8 +209,38 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
-    """Sell shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol") #Symbol that you want to sell
+        value = lookup(symbol)
+        if value == None:
+            return apology("No selling here bro")
+        amount = request.form.get("shares")
+        try:
+            amount = eval(amount)
+            if amount < 0:
+                return apology("No Negative number")
+        except:
+            return apology("Bro... positive integer number only")
+        accountHoldings = aggregateBuy()
+        print(accountHoldings)
+        return render_template("sell.html")
+    #     price = value["price"]
+    #     id = session["user_id"]
+    #     print("id = ",type(id),'  ',id)
+    #     # We are doing to edit the database
+    #     balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
+    #     totalCost = int(price) * int(amount)
+    #     afterDeduction = balance - totalCost
+    #     print("After deduction   :",afterDeduction)
+
+    #     if afterDeduction < 0:
+    #         return apology("No money no honey")
+
+    #     db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
+    #     db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,id,"buy")
+    if request.method == "GET":
+        return render_template("sell.html")
+
 
 
 # jinja filter configures Flask to store sessions on the local filesystem (i.e., disk) as opposed to storing them inside of (digitally signed) cookies,
