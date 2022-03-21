@@ -88,6 +88,8 @@ def buy():
             amount = eval(amount)
             if amount < 0:
                 return apology("No Negative number")
+            if '.' in str(amount):
+                return apology("ONLY WHOLENUMBER BRUV")
         except:
             return apology("Bro... positive integer number only")
         price = value["price"]
