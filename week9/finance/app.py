@@ -47,6 +47,7 @@ def index():
     # [{'id': 5, 'price': 23.22, 'amount': 33, 'symbol': 't', 'user_id': 3}, {'id': 6, 'price': 905.39, 'amount': 1, 'symbol': 'TSLA', 'user_id': 3}]
     accountHoldings = {}
     for i in rows:
+        amount = i['amount']
         if i['symbol'] not in accountHoldings.keys():
             accountHoldings[i['symbol']] = amount
         else:
