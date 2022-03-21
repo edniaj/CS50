@@ -228,7 +228,8 @@ def sell():
         if amount > balanceShare :
             return apology("You dont have enough shares you goofball")
         else :
-            cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash'] + amount * price
+            cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
+            cashback = int(amount) * int(price)
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
             db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,session["user_id"],"sell")
 
