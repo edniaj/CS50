@@ -175,7 +175,9 @@ def quote():
         return render_template("quote.html")
     if request.method == "POST":
         value = lookup(request.form.get("symbol"))
-        print(value)
+        print(value == None)
+        if value == None:
+            return apology('Only idiots will type a ticker that doesnt exist, google ')
         return render_template("quoted.html",value=value)
 
 
