@@ -48,6 +48,8 @@ def index():
     accountHoldings = aggregateBuy()
     print(accountHoldings)
     print("balance = ",balance)
+
+    
     return render_template("index.html", balance=balance)
 
 def aggregateBuy():
