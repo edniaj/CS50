@@ -67,8 +67,8 @@ def buy():
         # We are doing to edit the database
         balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
         totalCost = int(price) * int(amount)
-        print(balance)
         afterDeduction = balance - totalCost
+        print(afterDeduction)
         if afterDeduction < 0:
             return apology("No money no honey")
         return redirect("/buy")
