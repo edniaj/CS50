@@ -115,8 +115,10 @@ def buy():
 @app.route("/history")
 @login_required
 def history():
-    """Show history of transactions"""
-    return render_template("history.html")
+    values = db.execute("SELECT * FROM receipts")
+    print("values = ",values[0]['price'])
+    # return render_template("history.html")
+    return render_template("history.html",values = values)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -177,6 +179,16 @@ def quote():
         return render_template("quoted.html",value=value)
 
 
+@app.route("/topup", methods=["GET", "POST"])
+@login_required
+def topup():
+    if request.method == "GET":
+        return render_template("topup.html")
+    if request.method == "POST":
+        value = lookup(request.form.get("amount"))
+        value = int(value)
+        
+        return redirect("/")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -238,24 +250,8 @@ def sell():
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
             db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action,date) VALUES(?,?,?,?,?, ?)",price,amount,symbol,session["user_id"],"sell",writeDate)
         return render_template("sell.html")
-    #     price = value["price"]
-    #     id = session["user_id"]
-    #     print("id = ",type(id),'  ',id)
-    #     # We are doing to edit the database
-    #     balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
-    #     totalCost = int(price) * int(amount)
-    #     afterDeduction = balance - totalCost
-    #     print("After deduction   :",afterDeduction)
-
-    #     if afterDeduction < 0:
-    #         return apology("No money no honey")
-
-    #     db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
-    #     db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,id,"buy")
     if request.method == "GET":
         return render_template("sell.html")
 
 
 
-# jinja filter configures Flask to store sessions on the local filesystem (i.e., disk) as opposed to storing them inside of (digitally signed) cookies,
-# which is Flask’s default. The file then configures CS50’s SQL module to use finance.db.
