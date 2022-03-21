@@ -222,7 +222,8 @@ def sell():
         except:
             return apology("Bro... positive integer number only")
         accountHoldings = aggregateBuy()
-        print(accountHoldings)
+        print(accountHoldings[symbol])
+        balanceShare = accountHoldings[symbol]
         return render_template("sell.html")
     #     price = value["price"]
     #     id = session["user_id"]
