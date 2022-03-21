@@ -5,8 +5,8 @@
         <div>
             <label for="">symbol</label>
             <select name="symbol">
-                {% for key in listKey %}
-                    <option> </option>
+                {% for key in accountHoldings %}
+                    <option value={{key}}> {{key}} </option>
                 {% endfor %}
             </select>
             <label for="">Amount :</label>

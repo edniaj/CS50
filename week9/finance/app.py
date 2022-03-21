@@ -259,7 +259,7 @@ def sell():
         return redirect("/")
     if request.method == "GET":
         accountHoldings = list(aggregateBuy().keys())
-        return render_template("sell.html",accountHoldings)
+        return render_template("sell.html",accountHoldings = accountHoldings)
 
 
 
