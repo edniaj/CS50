@@ -49,8 +49,11 @@ def index():
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
-    """Buy shares of stock"""
-    return apology("TODO")
+    if request.method == "POST":
+        return apology("TODO")
+    if request.method == "GET":
+        return render_template("buy.html")
+
 
 
 @app.route("/history")
@@ -116,15 +119,7 @@ def quote():
         value = lookup(request.form.get("symbol"))
         print(value)
         return render_template("quoted.html",value=value)
-'''
-Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
-Submit the user’s input via POST to /quote.
-Odds are you’ll want to create two new templates (e.g., quote.html and quoted.html).
-When a user visits /quote via GET, render one of those templates,
-inside of which should be an HTML form that submits to /quote via POST.
-In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
 
-'''
 
 
 @app.route("/register", methods=["GET", "POST"])
