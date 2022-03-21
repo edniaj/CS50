@@ -69,8 +69,11 @@ def buy():
         totalCost = int(price) * int(amount)
         afterDeduction = balance - totalCost
         print(afterDeduction)
+
         if afterDeduction < 0:
             return apology("No money no honey")
+
+        db.execute("INSERT INTO receipts (price, ) VALUES(?, ?)", name,hash")
         return redirect("/buy")
 
     if request.method == "GET":
