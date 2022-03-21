@@ -50,6 +50,7 @@ def index():
 @login_required
 def buy():
     if request.method == "POST":
+        if request.form.get("symbol") 
         return apology("TODO")
     if request.method == "GET":
         return render_template("buy.html")
