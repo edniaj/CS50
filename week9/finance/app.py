@@ -107,7 +107,7 @@ def buy():
         db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
         db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action,date) VALUES(?,?,?,?,?, ?)",price,amount,symbol,id,"buy",writeDate)
         # db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", name,hash)
-        return redirect("/buy")
+        return redirect("/")
 
     if request.method == "GET":
         return render_template("buy.html")
