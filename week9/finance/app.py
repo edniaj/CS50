@@ -209,9 +209,11 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+    id = session['user_id']
     if request.method == "POST":
         symbol = request.form.get("symbol") #Symbol that you want to sell
         value = lookup(symbol)
+        price = value["price"]
         if value == None:
             return apology("No selling here bro")
         amount = request.form.get("shares")
@@ -226,10 +228,10 @@ def sell():
         if amount > balanceShare :
             return apology("You dont have enough shares you goofball")
         else :
-            cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
-            afterDeduction = balanceShare - amount
-            
-            db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
+            cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash'] + amount * price
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
+            db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,session["user_id"],"sell")
+
         return render_template("sell.html")
     #     price = value["price"]
     #     id = session["user_id"]
