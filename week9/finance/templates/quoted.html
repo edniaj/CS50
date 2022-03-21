@@ -10,7 +10,7 @@
         <tbody>
             <td>{{value["name"]}}</td>
             <td>{{value["symbol"]}}</td>
-            <td>{{value["price"]}}</td>
+            <td>{{value["price"] | usd}}</td>
         </tbody>
     </table>
 {% endblock %}

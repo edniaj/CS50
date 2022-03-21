@@ -23,8 +23,8 @@
                 <tr>
                     <td>{{key}}</td>
                     <td>{{accountHoldings[key]["amount"]}}</td>
-                    <td>{{accountHoldings[key]["price"]}}</td>
-                    <td>{{accountHoldings[key]["amount"] * accountHoldings[key]["price"]}}</td>
+                    <td>{{accountHoldings[key]["price"] | usd}}</td>
+                    <td>{{ (accountHoldings[key]["amount"] * accountHoldings[key]["price"]) | usd}}</td>
                 </tr>
             {% endfor %}
         </tbody>
