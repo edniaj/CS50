@@ -61,6 +61,7 @@ def buy():
                 return apology("No Negative number")
         except:
             return apology("Bro... positive integer number only")
+        
     if request.method == "GET":
         return render_template("buy.html")
 
