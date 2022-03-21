@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Buy{% endblock %}
+{% block main %}
+    <table>
+        <thead>
+            <th>name</th>
+            <th>symbol</th>
+            <th>price</th>
+        </thead>
+        <tbody>
+            <td>{{value["name"]}}</td>
+            <td>{{value["symbol"]}}</td>
+            <td>{{value["price"]}}</td>
+        </tbody>
+    </table>
+{% endblock %}
