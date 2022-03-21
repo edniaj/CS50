@@ -186,11 +186,10 @@ def topup():
         return render_template("topup.html")
     if request.method == "POST":
         value = request.form.get("amount")
-        # value = int(value)
-        print(value)
-        # cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", session['user_id'])[0]['cash']
-        # cashBalance += value
-        # db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
+        value = int(value)
+        cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", session['user_id'])[0]['cash']
+        cashBalance += value
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
         # return render_template("topup.html")
         return redirect("/")
 
