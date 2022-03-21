@@ -225,6 +225,11 @@ def sell():
         balanceShare = accountHoldings[symbol]['amount']
         if amount > balanceShare :
             return apology("You dont have enough shares you goofball")
+        else :
+            afterDeduction = balanceShare - amount
+            
+            cashBalance =
+            db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
         return render_template("sell.html")
     #     price = value["price"]
     #     id = session["user_id"]
