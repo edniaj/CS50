@@ -73,8 +73,8 @@ def buy():
         if afterDeduction < 0:
             return apology("No money no honey")
 
+        db.execute("UPDATE users SET cash = ? WHERE id = ? VALUES(?,?)",afterDeduction, id)
         db.execute("INSERT INTO receipts (price, amount, symbol, user_id) VALUES(?, ?, ?, ?)", price=price, amount=amount, symbol=symbol, user_id=id)
-        db.execute
         return redirect("/buy")
 
     if request.method == "GET":
