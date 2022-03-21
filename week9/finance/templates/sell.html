@@ -3,12 +3,16 @@
 {% block main %}
     <form action="" method="post">
         <div>
-            <label for="">Symbol</label>
-            <input type="text" name="symbol" placeholder="Symbol">
+            <label for="">symbol</label>
+            <select name="symbol">
+                {% for key in listKey %}
+                    <option> </option>
+                {% endfor %}
+            </select>
             <label for="">Amount :</label>
             <input type="text" name="shares" placeholder="Amount">
         </div>
         <br>
-        <button class="btn btn-primary" type="submit">Buy</button>
+        <button class="btn btn-primary" type="submit">sell</button>
     </form>
 {% endblock %}

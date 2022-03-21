@@ -258,7 +258,8 @@ def sell():
             db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action,date) VALUES(?,?,?,?,?, ?)",price,amount,symbol,session["user_id"],"sell",writeDate)
         return redirect("/")
     if request.method == "GET":
-        return render_template("sell.html")
+        accountHoldings = list(aggregateBuy().keys())
+        return render_template("sell.html",accountHoldings)
 
 
 
