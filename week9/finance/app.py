@@ -64,6 +64,7 @@ def buy():
         price = value["price"]
         id = session["user_id"]
         balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
+        totalCost = int(price) * int(amount)
         print(balance)
         return redirect("/buy")
 
