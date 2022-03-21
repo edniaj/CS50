@@ -226,9 +226,9 @@ def sell():
         if amount > balanceShare :
             return apology("You dont have enough shares you goofball")
         else :
+            cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
             afterDeduction = balanceShare - amount
             
-            cashBalance =
             db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
         return render_template("sell.html")
     #     price = value["price"]
