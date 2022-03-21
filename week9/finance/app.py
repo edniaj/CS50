@@ -63,18 +63,18 @@ def buy():
             return apology("Bro... positive integer number only")
         price = value["price"]
         id = session["user_id"]
-
+        print("id = ",type(id),'  ',id)
         # We are doing to edit the database
         balance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
         totalCost = int(price) * int(amount)
         afterDeduction = balance - totalCost
-        print(afterDeduction)
+        print("After deduction   :",afterDeduction)
 
         if afterDeduction < 0:
             return apology("No money no honey")
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ? VALUES(?,?)",afterDeduction, id)
-        db.execute("INSERT INTO receipts (price, amount, symbol, user_id) VALUES(?, ?, ?, ?)", price=price, amount=amount, symbol=symbol, user_id=id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?",afterDeduction, id)
+        db.execute("INSERT INTO receipts (price, amount, symbol, user_id) VALUES(?,?,?,?)", price=price, amount=amount, symbol=symbol, user_id=id)
         return redirect("/buy")
 
     if request.method == "GET":
