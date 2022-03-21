@@ -46,11 +46,12 @@ def index():
     # [{'id': 5, 'price': 23.22, 'amount': 33, 'symbol': 't', 'user_id': 3}, {'id': 6, 'price': 905.39, 'amount': 1, 'symbol': 'TSLA', 'user_id': 3}]
     balance = db.execute("SELECT cash FROM users WHERE id = (?)", session['user_id'])[0]['cash']
     accountHoldings = aggregateBuy()
+    accountHoldings = list(accountHoldings)
     print(accountHoldings)
     print("balance = ",balance)
 
-    
-    return render_template("index.html", balance=balance)
+
+    return render_template("index.html", balance=balance, accountHoldings = accountHoldings)
 
 def aggregateBuy():
     rows = db.execute("SELECT * FROM receipts WHERE user_id = ?", session['user_id'])
