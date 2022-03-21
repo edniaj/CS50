@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Quote{% endblock %}
+{% block main %}
+    <table>
+        <thead>
+            <th>Stocks owned</th>
+            <th>Amount</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <td>{{value["name"]}}</td>
+            <td>{{value["symbol"]}}</td>
+            <td>{{value["price"]}}</td>
+        </tbody>
+    </table>
+{% endblock %}
+w
