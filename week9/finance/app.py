@@ -230,6 +230,10 @@ def sell():
         else :
             cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", id)[0]['cash']
             cashback = int(amount) * int(price)
+            print(cashBalance)
+            print(cashback)
+            cashBalance += cashback
+            print(cashBalance)
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
             db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action) VALUES(?,?,?,?,?)",price,amount,symbol,session["user_id"],"sell")
 
