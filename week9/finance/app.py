@@ -67,7 +67,10 @@ def aggregateBuy():
         if i['symbol'] not in accountHoldings.keys():
             accountHoldings[i['symbol']] = {"amount":amount, "price":price}
         else:
-            accountHoldings[i['symbol']]['amount'] += amount
+            if i['action'] == 'buy':
+                accountHoldings[i['symbol']]['amount'] += amount
+            else:
+                accountHoldings[i['symbol']]['amount'] -= amount
     return accountHoldings
 
 
