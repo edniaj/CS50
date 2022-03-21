@@ -185,9 +185,13 @@ def topup():
     if request.method == "GET":
         return render_template("topup.html")
     if request.method == "POST":
-        value = lookup(request.form.get("amount"))
-        value = int(value)
-        
+        value = request.form.get("amount")
+        # value = int(value)
+        print(value)
+        # cashBalance = db.execute("SELECT cash FROM users WHERE id = (?)", session['user_id'])[0]['cash']
+        # cashBalance += value
+        # db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
+        # return render_template("topup.html")
         return redirect("/")
 
 @app.route("/register", methods=["GET", "POST"])
