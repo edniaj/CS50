@@ -53,10 +53,10 @@ def index():
         grandTotal += accountHoldings[i]['amount'] * accountHoldings[i]['price']
     print(f'Grand total: {grandTotal}')
     print(accountHoldings)
-    print("balance = ",balance)
+    print("balance = ",balance,grandTotal)
 
 
-    return render_template("index.html", balance=balance, accountHoldings = accountHoldings, listKey=listKey)
+    return render_template("index.html", balance=balance, accountHoldings = accountHoldings, listKey=listKey,grandTotal=grandTotal)
 
 def aggregateBuy():
     rows = db.execute("SELECT * FROM receipts WHERE user_id = ?", session['user_id'])

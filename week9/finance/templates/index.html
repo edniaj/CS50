@@ -1,26 +1,32 @@
 {% extends "layout.html" %}
 {% block title %}Quote{% endblock %}
 {% block main %}
-
     <table>
         <thead>
             <th>Cash balance</th>
             <th>Grand total</th>
         </thead>
         <tbody>
-            <td>{{balance}} </td>
+            <td>{{ balance }}</td>
+            <td>{{ grandTotal }}</td>
         </tbody>
     </table>
-
     <table>
         <thead>
             <th>Stocks owned</th>
             <th>Amount</th>
             <th>Price</th>
-            <th>Value </th>
+            <th>Value</th>
         </thead>
         <tbody>
-            {# For loop #}
+            {% for key in listKey %}
+                <tr>
+                    <td>{{key}}</td>
+                    <td>{{accountHoldings[key]["amount"]}}</td>
+                    <td>{{accountHoldings[key]["price"]}}</td>
+                    <td>{{accountHoldings[key]["amount"] * accountHoldings[key]["price"]}}</td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}
