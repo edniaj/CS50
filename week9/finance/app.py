@@ -256,7 +256,7 @@ def sell():
             writeDate = str(datetime.datetime.now())
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cashBalance, session['user_id'])
             db.execute("INSERT INTO receipts (price, amount, symbol, user_id,action,date) VALUES(?,?,?,?,?, ?)",price,amount,symbol,session["user_id"],"sell",writeDate)
-        return render_template("sell.html")
+        return redirect("/")
     if request.method == "GET":
         return render_template("sell.html")
 
