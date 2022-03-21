@@ -61,7 +61,11 @@ def buy():
                 return apology("No Negative number")
         except:
             return apology("Bro... positive integer number only")
-        
+        price = value["price"]
+        print(session)
+        # db.execute("SELECT cash FROM users WHERE username = ?",)
+        return redirect("/buy")
+
     if request.method == "GET":
         return render_template("buy.html")
 
