@@ -54,7 +54,7 @@ def buy():
         value = lookup(symbol)
         if value == None:
             return apology("No selling here bro")
-        
+
     if request.method == "GET":
         return render_template("buy.html")
 
