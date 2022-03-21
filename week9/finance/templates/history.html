@@ -3,14 +3,20 @@
 {% block main %}
     <table>
         <thead>
-            <th>name</th>
-            <th>symbol</th>
             <th>price</th>
+            <th>amount</th>
+            <th>symbol</th>
+            <th>action</th>
+            <th>date</th>
         </thead>
         <tbody>
-            <td>{{value["name"]}}</td>
-            <td>{{value["symbol"]}}</td>
-            <td>{{value["price"]}}</td>
-        </tbody>
-    </table>
-{% endblock %}
+            {% for value in values %}
+                <td>{{ value["name"] }}</td>
+                <td>{{ value["symbol"] }}</td>
+                <td>{{ value["price"] }}</td>
+                <td>{{ value["action"] }}</td>
+                <td>{{ value["date"] }}</td>
+            {% endfor%}
+            </tbody>
+        </table>
+    {% endblock %}
